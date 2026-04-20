@@ -425,6 +425,154 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials-real" className="bg-black text-white pt-20 md:pt-28 pb-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <p className="text-[11px] tracking-[0.25em] text-neutral-300 uppercase font-medium">
+              Testimonials
+            </p>
+            <h2
+              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+              className="mt-4 uppercase text-3xl md:text-4xl lg:text-[44px] leading-[1.05] tracking-tight"
+            >
+              Real results from <span className="underline underline-offset-[6px] decoration-2">real patients</span>
+            </h2>
+          </motion.div>
+
+          <div className="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div className="relative rounded-2xl overflow-hidden bg-neutral-200 aspect-[4/3]">
+              <img src={heroMan} alt="Patient testimonial" className="w-full h-full object-cover" />
+              <div className="absolute left-6 bottom-6 text-white">
+                <div className="text-lg font-semibold">A. Lermsider</div>
+                <div className="h-[3px] w-24 bg-[#D14361] mt-1" />
+                <div className="text-xs mt-1 text-neutral-200">Miami, FL 48</div>
+              </div>
+              <button className="absolute inset-0 flex items-center justify-center group">
+                <span className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center transition">
+                  <Play className="w-6 h-6 text-black ml-1" fill="currentColor" />
+                </span>
+              </button>
+            </div>
+
+            <div>
+              <h3
+                style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+                className="font-sans uppercase text-3xl md:text-4xl lg:text-[44px] leading-[1.05] tracking-tight"
+              >
+                "My life completely changed thanks to this treatment."
+              </h3>
+              <div className="mt-6 text-sm text-neutral-300 leading-relaxed">
+                <div>Hormone Therapy</div>
+                <div>Andrew L. | Age 48 | Miami, FL</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="bg-white text-neutral-800 rounded-2xl p-6">
+                <p className="text-[13px] leading-relaxed text-neutral-600">
+                  They did this, that and whatever else a testimonial gets included. May be good or no, but it's a testimonial, let's keep it short and sweet. They did this, that and whatever else a testimonial gets included. May be good or no, but it's a testimonial, let's keep it short and sweet.
+                </p>
+                <div className="mt-5 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#0B1F3A]" />
+                  <div>
+                    <div className="text-sm font-semibold text-neutral-900">John Doe</div>
+                    <div className="text-[11px] text-neutral-500">Software AE at Slack</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex justify-center gap-4">
+            <button className="w-10 h-10 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-white transition flex items-center justify-center">
+              <ArrowRight className="w-4 h-4 rotate-180" />
+            </button>
+            <button className="w-10 h-10 rounded-full border border-neutral-700 text-white hover:border-white transition flex items-center justify-center">
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Bar (overlapping) */}
+      <div className="bg-black pb-16">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
+          <div className="bg-[#1F3BFF] rounded-2xl px-8 md:px-12 py-6 md:py-7 flex flex-col md:flex-row items-center justify-between gap-5">
+            <div
+              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+              className="uppercase text-white text-2xl md:text-[26px] tracking-tight text-center md:text-left"
+            >
+              Ready to feel like yourself again?
+            </div>
+            <button className="bg-white text-neutral-900 font-semibold tracking-[0.12em] text-sm px-7 py-3.5 rounded-full hover:bg-neutral-100 transition whitespace-nowrap">
+              SEE IF YOU QUALIFY
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Direct Physician Access Section */}
+      <section id="physicians" className="bg-[#EEF1F4] py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
+                Direct Physician Access
+              </p>
+              <h2
+                style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+                className="mt-5 uppercase text-3xl md:text-4xl lg:text-[44px] leading-[1.05] tracking-tight text-neutral-900"
+              >
+                Most clinics make you wait weeks. Most hand you off to assistants. Most leave you guessing between appointments. Not here.
+              </h2>
+            </motion.div>
+
+            <div className="flex gap-3 shrink-0">
+              <button className="w-10 h-10 rounded-full border border-neutral-400 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 transition flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 rotate-180" />
+              </button>
+              <button className="w-10 h-10 rounded-full border border-neutral-900 text-neutral-900 transition flex items-center justify-center">
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[0, 1, 2, 3].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                className="text-center"
+              >
+                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-200 to-neutral-300 flex items-end justify-center">
+                  <div className="w-full h-full bg-neutral-300" />
+                </div>
+                <div className="mt-4 text-sm font-semibold text-neutral-900">Dr. Frank J. Welch, M.D.</div>
+                <div className="text-xs text-neutral-500 mt-0.5">Medical Director</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Elements Grid */}
       <section id="elements" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
