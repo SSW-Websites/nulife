@@ -320,7 +320,7 @@ export default function Home() {
                     <div className="hidden lg:block absolute left-10 right-[-3rem] top-1/2 -translate-y-1/2 h-px bg-neutral-300" />
                   )}
                 </div>
-                <h3 className="text-base font-semibold text-neutral-900 mb-2">
+                <h3 className="font-sans text-base font-semibold text-neutral-900 mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-neutral-600 leading-relaxed">
