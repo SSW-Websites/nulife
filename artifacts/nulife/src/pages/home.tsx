@@ -31,17 +31,17 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-black text-white overflow-hidden">
-        {/* Background image: shirtless man, right-anchored */}
-        <div className="absolute inset-0">
+        {/* Background image: shirtless man, fully visible and centered */}
+        <div className="absolute inset-0 bg-black">
           <img
             src={heroMan}
             alt=""
             aria-hidden="true"
-            className="absolute right-0 top-0 h-full w-full md:w-[70%] lg:w-[60%] object-cover object-[60%_center] md:object-right"
+            className="absolute inset-0 h-full w-full object-contain object-center"
           />
-          {/* Left-side gradient to fade image into pure black behind copy */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 md:via-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          {/* Soft side fades so the image blends into pure black at the edges */}
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black to-transparent pointer-events-none" />
         </div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32">
