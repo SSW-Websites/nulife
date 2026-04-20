@@ -194,33 +194,21 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Divider */}
-          <div className="relative flex items-center my-14 md:my-20">
-            <div className="flex-1 border-t border-dashed border-[#1F6BFF]/40" />
-            <div className="mx-4 text-[#1F6BFF]">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="5" y1="5" x2="19" y2="19" />
-                <line x1="19" y1="5" x2="5" y2="19" />
-              </svg>
-            </div>
-            <div className="flex-1 border-t border-dashed border-[#1F6BFF]/40" />
-          </div>
-
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="mt-14 md:mt-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Stats column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-3 space-y-10"
+              className="lg:col-span-3 divide-y divide-neutral-300"
             >
               {[
                 { value: "1000+", label: "Patients Optimized" },
                 { value: "12+", label: "Years of Experience" },
                 { value: "90%", label: "Patient Success" },
-              ].map((s) => (
-                <div key={s.label}>
+              ].map((s, i) => (
+                <div key={s.label} className={i === 0 ? "pb-6" : "py-6 last:pb-0"}>
                   <div
                     style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
                     className="text-5xl lg:text-6xl text-neutral-900 leading-none tracking-tight"
@@ -259,9 +247,7 @@ export default function Home() {
                   transition={{ delay: i * 0.1, duration: 0.55 }}
                   className="space-y-5"
                 >
-                  <div className="w-32 h-32 rounded-full overflow-hidden ring-1 ring-black/5 shadow-sm">
-                    <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
-                  </div>
+                  <img src={card.img} alt={card.title} className="w-36 h-36 object-contain" />
                   <h3
                     style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
                     className="uppercase tracking-tight text-2xl leading-[1.05] text-neutral-900"
