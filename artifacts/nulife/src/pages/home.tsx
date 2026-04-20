@@ -300,7 +300,7 @@ export default function Home() {
                 desc: "Your physician walks you through your labs in plain English. Creates your personalized protocol. No time limits.",
               },
               {
-                title: "Ongoing Monitoring",
+                title: "Ongoing monitoring",
                 desc: "3-6 follow-up lab panels per year. Adjust dosing. Track progress. Patient care advisor stays in touch.",
               },
             ].map((step, i) => (
@@ -310,9 +310,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: i * 0.1, duration: 0.55 }}
+                className="relative"
               >
-                <div className="w-10 h-10 rounded-full bg-[#0B1F3A] text-white flex items-center justify-center text-sm font-semibold mb-5">
-                  {i + 1}
+                <div className="relative mb-5 flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-[#0B1F3A] text-white flex items-center justify-center text-sm font-semibold relative z-10 shrink-0">
+                    {i + 1}
+                  </div>
+                  {i < 3 && (
+                    <div className="hidden lg:block absolute left-10 right-[-3rem] top-1/2 -translate-y-1/2 h-px bg-neutral-300" />
+                  )}
                 </div>
                 <h3 className="text-base font-semibold text-neutral-900 mb-2">
                   {step.title}
