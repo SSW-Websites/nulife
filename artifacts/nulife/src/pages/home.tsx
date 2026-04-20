@@ -264,6 +264,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4-Step Process Section */}
+      <section id="process" className="bg-white py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
+              Our 4-Step Process
+            </p>
+            <h2
+              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+              className="mt-5 uppercase text-4xl md:text-5xl lg:text-[56px] leading-[1.02] tracking-tight text-neutral-900 max-w-4xl mx-auto"
+            >
+              Get started in days with<br />our simple 4-step process
+            </h2>
+          </motion.div>
+
+          <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            {[
+              {
+                title: "Qualification Call",
+                desc: "We make sure we're the right fit medically and that our approach matches your goals.",
+              },
+              {
+                title: "Comprehensive Evaluation",
+                desc: "Complete health intake and diagnostic lab panel. Results in 48 hours.",
+              },
+              {
+                title: "Physician Consultation",
+                desc: "Your physician walks you through your labs in plain English. Creates your personalized protocol. No time limits.",
+              },
+              {
+                title: "Ongoing Monitoring",
+                desc: "3-6 follow-up lab panels per year. Adjust dosing. Track progress. Patient care advisor stays in touch.",
+              },
+            ].map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.1, duration: 0.55 }}
+              >
+                <div className="w-10 h-10 rounded-full bg-[#0B1F3A] text-white flex items-center justify-center text-sm font-semibold mb-5">
+                  {i + 1}
+                </div>
+                <h3 className="text-base font-semibold text-neutral-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Elements Grid */}
       <section id="elements" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
