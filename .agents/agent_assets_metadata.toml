@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "oQimnuE-Gg-j1YYZd2Hha"
+uri = "file://artifacts/nulife/public/hero-bg.png"
+type = "image"
+title = "Dawn light morning lifestyle"
+
+[[generated]]
+id = "ToCtdTS7_5gw5JEa07i0B"
+uri = "file://artifacts/nulife/public/product.png"
+type = "image"
+title = "Minimal wellness supplement product"
+
+[[generated]]
+id = "lPOecLvGfUJmmMxKg5T2H"
+uri = "file://artifacts/nulife/public/texture.png"
+type = "image"
+title = "Abstract terracotta and clay texture"
+
+[[generated]]
+id = "klWmqfWJ1u6ppUpLNIwyl"
+uri = "file://artifacts/nulife/public/movement.png"
+type = "image"
+title = "Person stretching in sunlight"
