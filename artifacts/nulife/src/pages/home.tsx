@@ -176,7 +176,7 @@ export default function Home() {
 
       {/* Hormone Therapy Section */}
       <section id="hormone-therapy" className="bg-[#EEF1F4] py-20 md:py-28">
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -194,7 +194,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="mt-14 md:mt-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="mt-14 md:mt-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
             {/* Stats column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
