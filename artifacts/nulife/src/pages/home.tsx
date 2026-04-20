@@ -53,7 +53,10 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:col-span-7 max-w-2xl"
             >
-              <h1 className="font-sans font-extrabold uppercase tracking-tight text-white leading-[0.95] text-[44px] sm:text-6xl lg:text-[80px] xl:text-[92px]">
+              <h1
+                style={{ fontFamily: 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif', fontWeight: 400 }}
+                className="uppercase tracking-tight text-white leading-[0.95] text-[44px] sm:text-6xl lg:text-[80px] xl:text-[92px]"
+              >
                 Hitting a<br />
                 brick wall<br />
                 with energy,<br />
