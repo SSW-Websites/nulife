@@ -7,6 +7,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
 import heroMan from "@assets/8566065be8400f2dd715c1f798b2c97136b03dd2_1776719838989.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
+import cardMonitoring from "@assets/Group_1430105211_1776720189303.png";
+import cardEducation from "@assets/Group_1430105212_1776720189311.png";
+import cardConcierge from "@assets/Group_1430105213_1776720189311.png";
+
+const IMPACT_FONT = 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif';
 
 export default function Home() {
   return (
@@ -169,38 +174,107 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
-        
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      {/* Hormone Therapy Section */}
+      <section id="hormone-therapy" className="bg-[#EEF1F4] py-20 md:py-28">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-foreground">
-              Quiet confidence comes from a <span className="italic text-primary">grounded foundation.</span>
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
-              We believe wellness shouldn't feel like a chore or a clinical prescription. It should feel like a sun-drenched morning — warm, hopeful, and intentional. By focusing on the foundational pillars of health, we give you the clarity and energy to build the life you want.
+            <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-neutral-500 mb-6">
+              Hormone Therapy
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border/50 pt-12">
+            <h2
+              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+              className="uppercase leading-[0.98] tracking-tight text-neutral-900 text-[34px] sm:text-5xl lg:text-[56px] xl:text-[64px] max-w-[1100px]"
+            >
+              Your energy is <span className="text-neutral-300">gone.</span> Focus slipping. Weight won't budge. Sex drive plummeted. Your doctor said everything's "normal." But you don't feel normal.
+            </h2>
+          </motion.div>
+
+          {/* Divider */}
+          <div className="relative flex items-center my-14 md:my-20">
+            <div className="flex-1 border-t border-dashed border-[#1F6BFF]/40" />
+            <div className="mx-4 text-[#1F6BFF]">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <line x1="5" y1="5" x2="19" y2="19" />
+                <line x1="19" y1="5" x2="5" y2="19" />
+              </svg>
+            </div>
+            <div className="flex-1 border-t border-dashed border-[#1F6BFF]/40" />
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Stats column */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-3 space-y-10"
+            >
               {[
-                { label: "Plant-based", value: "100%" },
-                { label: "Bioavailable", value: "High" },
-                { label: "Fillers", value: "Zero" },
-                { label: "Sourcing", value: "Ethical" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-3xl font-serif font-bold text-foreground mb-2">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider font-medium">{stat.label}</div>
+                { value: "1000+", label: "Patients Optimized" },
+                { value: "12+", label: "Years of Experience" },
+                { value: "90%", label: "Patient Success" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div
+                    style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+                    className="text-5xl lg:text-6xl text-neutral-900 leading-none tracking-tight"
+                  >
+                    {s.value}
+                  </div>
+                  <div className="text-sm text-neutral-600 mt-2">{s.label}</div>
                 </div>
               ))}
+            </motion.div>
+
+            {/* Cards column */}
+            <div className="lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {[
+                {
+                  img: cardMonitoring,
+                  title: "Proactive Monitoring",
+                  desc: "Most clinics check once. We monitor continuously. Catch issues early. Adjust precisely. Less guesswork. More results.",
+                },
+                {
+                  img: cardEducation,
+                  title: "Education First",
+                  desc: "No time limits. No jargon. We explain everything in plain English until you're confident. You'll leave knowing exactly what happens next.",
+                },
+                {
+                  img: cardConcierge,
+                  title: "Concierge Care",
+                  desc: "Call your doctor. Text your doctor. Your patient care advisor anticipates needs and keeps your plan moving forward. No waiting weeks.",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: i * 0.1, duration: 0.55 }}
+                  className="space-y-5"
+                >
+                  <div className="w-32 h-32 rounded-full overflow-hidden ring-1 ring-black/5 shadow-sm">
+                    <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
+                  </div>
+                  <h3
+                    style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+                    className="uppercase tracking-tight text-2xl leading-[1.05] text-neutral-900"
+                  >
+                    {card.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-neutral-600 max-w-xs">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
