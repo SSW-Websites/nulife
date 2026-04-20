@@ -332,6 +332,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Difference Section */}
+      <section id="difference" className="bg-[#EEF1F4] py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
+              The Difference
+            </p>
+            <h2
+              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+              className="mt-5 uppercase text-3xl md:text-5xl lg:text-[52px] leading-[1.05] tracking-tight text-neutral-900 max-w-4xl mx-auto"
+            >
+              Men and women don't have the same hormonal issues, so why would we give you the same treatment?
+            </h2>
+            <p className="mt-5 text-neutral-600 text-base">
+              Personalized protocols built for your biology.
+            </p>
+          </motion.div>
+
+          <div className="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
+            {[
+              {
+                badge: "FOR MEN",
+                badgeBg: "bg-[#1F3BFF]",
+                title: "Restore your edge",
+                items: [
+                  "Low testosterone and declining performance",
+                  "Energy crashes and brain fog",
+                  "Weight gain and muscle loss",
+                  "Low libido and sexual dysfunction",
+                  "Sleep and mood issues",
+                  "Loss of strength and recovery",
+                ],
+                checkColor: "text-[#1F3BFF]",
+                btnBg: "bg-[#1F3BFF] hover:bg-[#1730d6]",
+              },
+              {
+                badge: "FOR WOMEN",
+                badgeBg: "bg-[#D14361]",
+                title: "Hormones done right",
+                items: [
+                  "Perimenopause and menopause symptoms",
+                  "Weight gain and stubborn fat",
+                  "Low energy and brain fog",
+                  "Mood swings and irritability",
+                  "Low libido and vaginal dryness",
+                  "Sleep disruption and hot flashes",
+                ],
+                checkColor: "text-[#D14361]",
+                btnBg: "bg-[#D14361] hover:bg-[#b8364f]",
+              },
+            ].map((card, i) => (
+              <motion.div
+                key={card.badge}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.1, duration: 0.55 }}
+                className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-neutral-200/70"
+              >
+                <span
+                  className={`inline-block ${card.badgeBg} text-white text-[11px] tracking-[0.18em] font-semibold px-4 py-1.5 rounded-full`}
+                >
+                  {card.badge}
+                </span>
+                <h3 className="font-sans mt-5 text-2xl md:text-[26px] font-semibold text-neutral-900">
+                  {card.title}
+                </h3>
+                <p className="mt-4 text-sm text-neutral-500">What we address:</p>
+                <ul className="mt-3 space-y-2.5">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-[15px] text-neutral-800">
+                      <Check className={`w-4 h-4 mt-1 shrink-0 ${card.checkColor}`} strokeWidth={3} />
+                      <span className="font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  className={`mt-7 w-full ${card.btnBg} text-white font-semibold tracking-[0.12em] text-sm py-4 rounded-full transition-colors`}
+                >
+                  SEE IF YOU QUALIFY
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Elements Grid */}
       <section id="elements" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
