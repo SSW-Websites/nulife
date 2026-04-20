@@ -2,86 +2,167 @@ import { motion } from "framer-motion";
 import { ArrowRight, Leaf, Moon, Sun, Heart, Play, CheckCircle2, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
+import heroMan from "@assets/8566065be8400f2dd715c1f798b2c97136b03dd2_1776719838989.png";
+import reviewsRow from "@assets/image_24_1776719838989.png";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="font-serif text-2xl font-bold tracking-tight text-primary">NuLife</div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/80">
-            <a href="#philosophy" className="hover:text-primary transition-colors">Philosophy</a>
-            <a href="#elements" className="hover:text-primary transition-colors">The Elements</a>
-            <a href="#science" className="hover:text-primary transition-colors">Science</a>
-            <a href="#reviews" className="hover:text-primary transition-colors">Reviews</a>
-          </div>
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden sm:flex rounded-full">Log in</Button>
-            <Button className="rounded-full px-6">Start Journey</Button>
+      <nav className="relative z-50 bg-[#0B1F3A] text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+          <a href="#" className="flex items-center">
+            <img src={nuLifeLogo} alt="NuLife Institute" className="h-9 w-auto" />
+          </a>
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-white/90">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
+            </span>
+            <span className="hidden sm:inline">Miami & Boca Raton</span>
+            <span className="hidden sm:inline text-white/40">|</span>
+            <span>Physician-led concierge care</span>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-xl z-10"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium mb-6">
-              <Sun className="w-4 h-4" />
-              <span>A new morning routine</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
-              Wake up to <br/>
-              <span className="text-primary italic">your best self.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              NuLife blends science-backed nutrition, mindful movement, and restorative rest into a simple daily system designed for ambitious people.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full text-base h-14 px-8 shadow-xl shadow-primary/20">
-                Explore the System <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base h-14 px-8 group bg-background/50 backdrop-blur-sm">
-                <Play className="mr-2 w-4 h-4 group-hover:text-primary transition-colors" /> Watch the Film
-              </Button>
-            </div>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl">
-              <img 
-                src="/hero-bg.png" 
-                alt="Sun-drenched morning" 
-                className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay"></div>
-            </div>
-            {/* Floating element */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 bg-background/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-border/50 max-w-[200px]"
+      <section className="relative bg-black text-white overflow-hidden">
+        {/* Background image: shirtless man, right-anchored */}
+        <div className="absolute inset-0">
+          <img
+            src={heroMan}
+            alt=""
+            aria-hidden="true"
+            className="absolute right-0 top-0 h-full w-full md:w-[70%] lg:w-[60%] object-cover object-[60%_center] md:object-right"
+          />
+          {/* Left-side gradient to fade image into pure black behind copy */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 md:via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            {/* Headline + reviews */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:col-span-7 max-w-2xl"
             >
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary-foreground">
-                  <Leaf className="w-5 h-5" />
-                </div>
-                <div className="font-medium text-sm">Vitality Score</div>
+              <h1 className="font-sans font-extrabold uppercase tracking-tight text-white leading-[0.95] text-[44px] sm:text-6xl lg:text-[80px] xl:text-[92px]">
+                Hitting a<br />
+                brick wall<br />
+                with energy,<br />
+                focus and<br />
+                performance?
+              </h1>
+              <p className="mt-8 text-lg md:text-xl text-white/85 max-w-xl leading-relaxed">
+                Get physician-led hormone optimization that actually monitors you.
+              </p>
+
+              {/* Reviews strip */}
+              <div className="mt-10 max-w-xl">
+                <img
+                  src={reviewsRow}
+                  alt="Patient reviews — Jeff D., Tim C., Steve K., David M., Mike S., Chris T., Mark L."
+                  className="w-full h-auto select-none"
+                  draggable={false}
+                />
               </div>
-              <div className="text-3xl font-serif font-bold text-foreground">94%</div>
-              <div className="text-xs text-muted-foreground mt-1">Average user increase in morning energy.</div>
+
+              {/* Trust line under reviews (mobile). On desktop it appears under the form. */}
+              <div className="mt-8 lg:hidden flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Proactive Care Advisor</span>
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 3-6 Annual Labs</span>
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> High Performance Community</span>
+              </div>
             </motion.div>
-          </motion.div>
+
+            {/* Qualification form */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+              className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
+            >
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="bg-white text-neutral-900 rounded-xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7 space-y-4"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <FieldText id="firstName" label="First Name" required />
+                  <FieldText id="lastName" label="Last Name" required />
+                </div>
+                <FieldText id="email" type="email" label="Email" required />
+                <FieldText id="phone" type="tel" label="Phone" required />
+                <FieldText id="city" label="City, State" required />
+
+                <FieldSelect
+                  id="goal"
+                  label="What's your #1 health goal right now?"
+                  required
+                  placeholder="Select your primary goal"
+                  options={[
+                    "Energy & Stamina",
+                    "Focus & Mental Clarity",
+                    "Strength & Performance",
+                    "Body Composition",
+                    "Libido & Sexual Health",
+                    "Longevity & Prevention",
+                  ]}
+                />
+                <FieldSelect
+                  id="investment"
+                  label="How much are you willing to invest in your health over 6 months?"
+                  required
+                  placeholder="Select investment range"
+                  options={[
+                    "$2,500 – $5,000",
+                    "$5,000 – $10,000",
+                    "$10,000 – $20,000",
+                    "$20,000+",
+                  ]}
+                />
+                <FieldSelect
+                  id="visit"
+                  label="Can you visit our Miami or Boca Raton location for your initial evaluation?"
+                  required
+                  placeholder="Select location preference"
+                  options={["Yes — Miami", "Yes — Boca Raton", "Either location works", "Need to discuss"]}
+                />
+                <FieldSelect
+                  id="timeline"
+                  label="What type of treatment timeline are you looking for?"
+                  required
+                  placeholder="Select timeline"
+                  options={["Start within 2 weeks", "Start within 1 month", "Start within 3 months", "Just exploring"]}
+                />
+
+                <Button
+                  type="submit"
+                  className="w-full h-14 rounded-md bg-[#1F6BFF] hover:bg-[#1857D6] text-white text-base font-semibold tracking-wide shadow-lg shadow-blue-900/20"
+                >
+                  SEE IF YOU QUALIFY
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+
+                <p className="text-center text-xs text-neutral-500 pt-1">
+                  Confidential consultation · Built for long-term success
+                </p>
+              </form>
+
+              {/* Trust line on desktop, under the form */}
+              <div className="hidden lg:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/90 mt-6">
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Proactive Care Advisor</span>
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 3-6 Annual Labs</span>
+                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> High Performance Community</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -392,6 +473,69 @@ export default function Home() {
           </div>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function FieldText({
+  id,
+  label,
+  type = "text",
+  required,
+}: {
+  id: string;
+  label: string;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <div className="space-y-1.5">
+      <Label htmlFor={id} className="text-[11px] font-semibold tracking-wider uppercase text-neutral-700">
+        {label} {required && <span className="text-neutral-400">*</span>}
+      </Label>
+      <Input
+        id={id}
+        type={type}
+        required={required}
+        className="h-11 rounded-md border-neutral-200 bg-neutral-50 focus-visible:ring-[#1F6BFF]/40 focus-visible:border-[#1F6BFF] text-neutral-900"
+      />
+    </div>
+  );
+}
+
+function FieldSelect({
+  id,
+  label,
+  placeholder,
+  options,
+  required,
+}: {
+  id: string;
+  label: string;
+  placeholder: string;
+  options: string[];
+  required?: boolean;
+}) {
+  return (
+    <div className="space-y-1.5">
+      <Label htmlFor={id} className="text-[11px] font-semibold tracking-wider uppercase text-neutral-700">
+        {label} {required && <span className="text-neutral-400">*</span>}
+      </Label>
+      <Select>
+        <SelectTrigger
+          id={id}
+          className="h-11 rounded-md border-neutral-200 bg-neutral-50 focus:ring-[#1F6BFF]/40 focus:border-[#1F6BFF] text-neutral-900 data-[placeholder]:text-neutral-400"
+        >
+          <SelectValue placeholder={placeholder} />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((opt) => (
+            <SelectItem key={opt} value={opt}>
+              {opt}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 }
