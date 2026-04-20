@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf, Moon, Sun, Heart, Play, CheckCircle2, Quote } from "lucide-react";
+import { ArrowRight, Leaf, Moon, Sun, Heart, Play, CheckCircle2, Quote, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
