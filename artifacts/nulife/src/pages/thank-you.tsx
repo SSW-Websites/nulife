@@ -55,7 +55,7 @@ export default function ThankYou() {
               Our team will call you shortly.
             </h1>
             <p className="mt-6 text-base md:text-lg font-medium text-white/90">
-              Check your email for confirmation details and a calendar invite.
+              Keep your phone close. If you have any recent lab work, pull it up before the call. It helps us get further, faster.
             </p>
 
             <div className="mt-10 flex justify-center">
