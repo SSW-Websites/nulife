@@ -151,10 +151,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
               className="lg:col-span-7 lg:justify-self-end w-full max-w-2xl"
             >
-              <div
-                id="qualify-form"
-                className="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 overflow-hidden scroll-mt-24"
-              >
+              <div id="qualify-form" className="scroll-mt-24">
                 <iframe
                   src="https://api.leadconnectorhq.com/widget/form/nLQRrO8Ueo7pBdjHxq2z"
                   style={{ width: "100%", height: "979px", border: "none", borderRadius: "10px" }}
