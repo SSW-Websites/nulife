@@ -129,6 +129,46 @@ const FAQ_ITEMS = [
   },
 ];
 
+export function CTAButton({
+  href = "#qualify-form",
+  children = "SEE IF YOU QUALIFY",
+  variant = "blue",
+  className = "",
+  type = "anchor",
+}: {
+  href?: string;
+  children?: React.ReactNode;
+  variant?: "blue" | "pink";
+  className?: string;
+  type?: "anchor" | "submit";
+}) {
+  const colorClasses =
+    variant === "pink"
+      ? "bg-[#D14361] hover:bg-[#b8364f] shadow-[0_0_0_5px_rgba(209,67,97,0.35)]"
+      : "bg-[#1F3BFF] hover:bg-[#1730d6] shadow-[0_0_0_5px_rgba(95,121,255,0.45)]";
+  const base = `inline-flex items-center justify-center uppercase text-white tracking-[0.04em] text-2xl md:text-[28px] px-10 md:px-12 py-4 md:py-5 rounded-full transition-colors ${colorClasses} ${className}`;
+  if (type === "submit") {
+    return (
+      <button
+        type="submit"
+        style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+        className={base}
+      >
+        {children}
+      </button>
+    );
+  }
+  return (
+    <a
+      href={href}
+      style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+      className={base}
+    >
+      {children}
+    </a>
+  );
+}
+
 export function TestimonialsSection() {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth < 768 : false,

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { TestimonialsSection, FAQSection, SiteFooter } from "@/components/site-sections";
+import { TestimonialsSection, FAQSection, SiteFooter, CTAButton } from "@/components/site-sections";
 import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
 import heroMan from "@assets/8566065be8400f2dd715c1f798b2c97136b03dd2_1776719838989.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
@@ -205,13 +205,8 @@ export default function Home() {
                   options={["Start within 2 weeks", "Start within 1 month", "Start within 3 months", "Just exploring"]}
                 />
 
-                <Button
-                  type="submit"
-                  className="w-full h-14 rounded-md bg-[#1F6BFF] hover:bg-[#1857D6] text-white text-base font-semibold tracking-wide shadow-lg shadow-blue-900/20"
-                >
-                  SEE IF YOU QUALIFY
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <CTAButton type="submit" className="w-full" />
+
 
                 <p className="text-center text-xs text-neutral-500 pt-1">
                   Confidential consultation · Built for long-term success
@@ -469,12 +464,10 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#qualify-form"
-                  className={`mt-7 w-full ${card.btnBg} text-white font-semibold tracking-[0.12em] text-sm py-4 rounded-full transition-colors text-center block`}
-                >
-                  SEE IF YOU QUALIFY
-                </a>
+                <CTAButton
+                  variant={card.checkColor === "text-[#D14361]" ? "pink" : "blue"}
+                  className="mt-7 w-full text-xl md:text-2xl px-6 py-3 md:py-3.5"
+                />
               </motion.div>
             ))}
           </div>
@@ -491,12 +484,7 @@ export default function Home() {
             >
               Ready to feel like yourself again?
             </div>
-            <a
-              href="#qualify-form"
-              className="bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-8 py-4 rounded-full hover:bg-neutral-100 transition whitespace-nowrap"
-            >
-              SEE IF YOU QUALIFY
-            </a>
+            <CTAButton />
           </div>
         </div>
       </div>
@@ -597,12 +585,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <a
-            href="#qualify-form"
-            className="mt-9 inline-block bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-10 py-4 rounded-full hover:bg-neutral-100 transition"
-          >
-            SEE IF YOU QUALIFY
-          </a>
+          <div className="mt-9">
+            <CTAButton />
+          </div>
         </div>
       </section>
       <FAQSection />
