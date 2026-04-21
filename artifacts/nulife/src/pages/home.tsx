@@ -106,7 +106,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-7 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
+              className="lg:col-span-6 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
               {/* Status pill — mobile only (in nav on desktop) */}
               <div className="md:hidden mb-5 flex items-center justify-center gap-2 text-xs font-medium text-white/85">
@@ -149,7 +149,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
+              className="lg:col-span-6 lg:justify-self-end w-full max-w-xl"
             >
               <div
                 id="qualify-form"
