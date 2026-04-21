@@ -14,8 +14,8 @@ const IMPACT_FONT =
 
 function CircleNode({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 aspect-square max-w-[240px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-2 sm:p-3 md:p-4">
-      <span className="text-center text-neutral-900 font-medium leading-tight text-[9px] sm:text-[11px] md:text-[13px] lg:text-sm">
+    <div className="flex-1 aspect-square max-w-[260px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-5 sm:p-6 md:p-7">
+      <span className="text-center text-neutral-900 font-medium leading-snug text-[10px] sm:text-xs md:text-sm">
         {children}
       </span>
     </div>
@@ -100,34 +100,32 @@ export default function ThankYou() {
       {/* How to make the most of your consultation */}
       <section className="bg-[#EEF1F4] py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6 }}
-              style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-              className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center"
-            >
-              What happens<br className="hidden lg:block" /> next
-            </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+            className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center"
+          >
+            What happens next
+          </motion.h2>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex justify-center lg:justify-end"
-            >
-              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 w-full max-w-[820px]">
-                <CircleNode>Our team calls you to learn about your goals</CircleNode>
-                <Arrow />
-                <CircleNode>Share your current symptoms and any recent lab work</CircleNode>
-                <Arrow />
-                <CircleNode>Meet with our medical experts to design your customized treatment plan</CircleNode>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-12 md:mt-16 flex justify-center"
+          >
+            <div className="flex items-center gap-3 sm:gap-5 md:gap-8 w-full max-w-[1000px]">
+              <CircleNode>Our team calls you to learn about your goals</CircleNode>
+              <Arrow />
+              <CircleNode>Share your current symptoms and any recent lab work</CircleNode>
+              <Arrow />
+              <CircleNode>Meet with our medical experts to design your customized treatment plan</CircleNode>
+            </div>
+          </motion.div>
         </div>
       </section>
 
