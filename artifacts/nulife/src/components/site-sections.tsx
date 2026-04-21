@@ -144,8 +144,8 @@ export function CTAButton({
 }) {
   const colorClasses =
     variant === "pink"
-      ? "bg-[#D14361] hover:bg-[#b8364f] shadow-[0_0_0_3px_rgba(209,67,97,0.35)]"
-      : "bg-[#1F3BFF] hover:bg-[#1730d6] shadow-[0_0_0_3px_rgba(95,121,255,0.45)]";
+      ? "bg-[#D14361] hover:bg-[#b8364f] shadow-[0_0_0_3px_#B00030]"
+      : "bg-[#1F3BFF] hover:bg-[#1730d6] shadow-[0_0_0_3px_#517AFF]";
   const base = `inline-flex items-center justify-center uppercase text-white tracking-[0.04em] text-xl md:text-2xl leading-none px-10 md:px-12 py-2.5 md:py-3 rounded-full transition-colors ${colorClasses} ${className}`;
   if (type === "submit") {
     return (
