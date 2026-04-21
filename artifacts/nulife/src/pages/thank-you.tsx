@@ -6,6 +6,7 @@ import {
 } from "@/components/site-sections";
 import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
 import heroBg from "@assets/BG_IMG_1776795090542.png";
+import heroBgMobile from "@assets/BG_IMG_(1)_1776795225974.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
 import circlesDiagram from "@assets/Group_350_1776790465717.png";
 
@@ -19,7 +20,12 @@ export default function ThankYou() {
       <section className="relative bg-black text-white overflow-hidden">
         {/* Hero background image */}
         <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center"
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center md:hidden"
+          style={{ backgroundImage: `url(${heroBgMobile})` }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center hidden md:block"
           style={{ backgroundImage: `url(${heroBg})` }}
           aria-hidden
         />
