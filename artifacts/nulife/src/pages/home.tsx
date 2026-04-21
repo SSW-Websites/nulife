@@ -649,6 +649,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Blue CTA Section */}
+      <section id="cta-blue" className="bg-[#1F3BFF] text-white py-20 md:py-28">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center">
+          <h2
+            style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
+            className="uppercase text-3xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight"
+          >
+            Physician-led hormone optimization that actually monitors you.
+          </h2>
+          <div className="mt-7 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-sm text-white/90">
+            {["Proactive Care Advisor", "3-6 Annual Labs", "High Performance Community"].map((f) => (
+              <div key={f} className="flex items-center gap-2">
+                <Check className="w-4 h-4" strokeWidth={3} />
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+          <button className="mt-9 bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-10 py-4 rounded-full hover:bg-neutral-100 transition">
+            SEE IF YOU QUALIFY
+          </button>
+        </div>
+      </section>
+
       {/* The Elements Grid */}
       <section id="elements" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
