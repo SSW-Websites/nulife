@@ -8,10 +8,37 @@ import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
 import heroBg from "@assets/BG_IMG_1776795090542.png";
 import heroBgMobile from "@assets/BG_IMG_(1)_1776795225974.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
-import circlesDiagram from "@assets/Group_350_1776790465717.png";
 
 const IMPACT_FONT =
   'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif';
+
+function CircleNode({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex-1 aspect-square max-w-[200px] rounded-full border border-neutral-400 bg-transparent flex items-center justify-center p-3 sm:p-4 md:p-5">
+      <span className="text-center text-neutral-900 font-medium leading-snug text-[11px] sm:text-sm md:text-base lg:text-lg">
+        {children}
+      </span>
+    </div>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg
+      viewBox="0 0 40 12"
+      className="shrink-0 w-6 sm:w-8 md:w-10 h-3 text-neutral-700"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <line x1="2" y1="6" x2="34" y2="6" />
+      <polyline points="28,2 38,6 28,10" />
+    </svg>
+  );
+}
 
 export default function ThankYou() {
   return (
@@ -91,11 +118,13 @@ export default function ThankYou() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex justify-center lg:justify-end"
             >
-              <img
-                src={circlesDiagram}
-                alt="Come prepared with your current symptoms & concerns and any recent lab work"
-                className="w-full max-w-[900px] h-auto"
-              />
+              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 w-full max-w-[760px]">
+                <CircleNode>Come prepared with</CircleNode>
+                <Arrow />
+                <CircleNode>Your current symptoms &amp; concerns</CircleNode>
+                <Arrow />
+                <CircleNode>Any recent lab work</CircleNode>
+              </div>
             </motion.div>
           </div>
         </div>
