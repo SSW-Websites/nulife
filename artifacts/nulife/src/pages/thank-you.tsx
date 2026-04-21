@@ -14,8 +14,8 @@ const IMPACT_FONT =
 
 function CircleNode({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 aspect-square max-w-[210px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-3 sm:p-4">
-      <span className="text-center text-neutral-900 font-medium leading-tight text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px]">
+    <div className="lg:flex-1 aspect-square w-[220px] lg:w-auto lg:max-w-[210px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-4">
+      <span className="text-center text-neutral-900 font-medium leading-tight text-sm lg:text-[13px]">
         {children}
       </span>
     </div>
@@ -24,20 +24,38 @@ function CircleNode({ children }: { children: React.ReactNode }) {
 
 function Arrow() {
   return (
-    <svg
-      viewBox="0 0 80 20"
-      className="shrink-0 w-10 sm:w-14 md:w-20 h-5 text-black"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <line x1="2" y1="10" x2="78" y2="10" />
-      <line x1="70" y1="3" x2="78" y2="10" />
-      <line x1="70" y1="17" x2="78" y2="10" />
-    </svg>
+    <>
+      {/* Down arrow (mobile/tablet) */}
+      <svg
+        viewBox="0 0 20 60"
+        className="shrink-0 w-5 h-10 text-black lg:hidden"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <line x1="10" y1="2" x2="10" y2="58" />
+        <line x1="3" y1="50" x2="10" y2="58" />
+        <line x1="17" y1="50" x2="10" y2="58" />
+      </svg>
+      {/* Right arrow (desktop) */}
+      <svg
+        viewBox="0 0 80 20"
+        className="shrink-0 w-10 sm:w-14 md:w-20 h-5 text-black hidden lg:block"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <line x1="2" y1="10" x2="78" y2="10" />
+        <line x1="70" y1="3" x2="78" y2="10" />
+        <line x1="70" y1="17" x2="78" y2="10" />
+      </svg>
+    </>
   );
 }
 
@@ -119,7 +137,7 @@ export default function ThankYou() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex justify-center lg:justify-end"
             >
-              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 w-full max-w-[760px]">
+              <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 w-full max-w-[760px]">
                 <CircleNode>Our team calls you to learn about your goals</CircleNode>
                 <Arrow />
                 <CircleNode>Share your current symptoms and any recent lab work</CircleNode>
