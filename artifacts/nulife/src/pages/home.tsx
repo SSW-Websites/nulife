@@ -696,28 +696,80 @@ export default function Home() {
           <Accordion type="single" collapsible defaultValue="q-0" className="mt-12 space-y-4">
             {[
               {
-                q: "How does the treatment program work?",
-                a: "Our comprehensive treatment program begins with an in-depth evaluation at our Miami or Boca Raton location. We analyze your biomarkers, health history, and goals to create a personalized plan that may include hormone optimization, nutritional guidance, and lifestyle interventions.",
+                q: "What is age management medicine?",
+                a: "Age management medicine focuses on optimizing your health as you age, improving how you feel today while reducing your risk of serious conditions such as heart disease, diabetes, osteoporosis, cognitive decline, and certain cancers.\n\nAt its core, aging is closely tied to metabolism, and metabolism is largely regulated by hormones. Hormones act as messengers, directing how your cells, organs, and systems function every day. As hormone levels decline, often beginning in your 30s, metabolic efficiency decreases. This can lead to symptoms many people accept as \u201Cnormal aging,\u201D such as weight gain, fatigue, muscle loss, reduced mental clarity, and decreased sexual health.\n\nAge management medicine is about addressing these changes proactively. By optimizing hormone balance and metabolic function, we aim to slow or even reverse many age-related declines and help you maintain strength, vitality, and long-term health.",
               },
               {
-                q: "What makes your approach different?",
-                a: "Most clinics check labs once a year. We monitor continuously, adjust dosing precisely, and your physician—not an assistant—walks you through every result in plain English. Our Patient Care Advisors anticipate your needs so your plan keeps moving without waiting weeks.",
+                q: "Why choose NuLife Institute?",
+                a: "Our physicians specialize exclusively in age management and hormone optimization. We take the time to understand your health history, lifestyle, and goals, allowing us to create a highly personalized treatment plan designed for long-term success, not temporary fixes.",
               },
               {
-                q: "Do I need to visit in person?",
-                a: "Your initial evaluation happens at our Miami or Boca Raton location so we can perform a full diagnostic workup. After that, most follow-ups can be handled virtually with your physician and care advisor.",
+                q: "What is Low T?",
+                a: "Low T refers to low testosterone levels, a condition that commonly occurs as men age during a natural process called andropause. Testosterone plays a critical role in energy levels, muscle and bone health, sexual function, sleep quality, and overall well-being.\n\nLow testosterone has also been linked to an increased risk of conditions such as diabetes and osteoporosis, and research shows that healthier testosterone levels are associated with improved longevity and quality of life. Because the symptoms of Low T can resemble depression or general aging, it is often underdiagnosed without proper testing.",
               },
               {
-                q: "How long before I see results?",
-                a: "Most patients begin noticing improvements in energy, sleep, and focus within the first 3-6 weeks. Body composition and performance changes typically follow over the first 3-6 months as your protocol is dialed in.",
+                q: "My sex drive isn\u2019t what it used to be. Could hormones be the cause?",
+                a: "Yes, hormone imbalances, particularly low testosterone, can significantly affect libido in both men and women. When hormone levels are optimized, many patients experience meaningful improvements in sexual desire, performance, and overall confidence. In our clinical experience, hormone optimization has been highly effective in addressing hormone-related sexual dysfunction.",
               },
               {
-                q: "Is this covered by insurance?",
-                a: "We are a concierge practice and operate outside of insurance to give you direct, unrushed physician access. We provide superbills you can submit to your insurance for potential reimbursement on covered services.",
+                q: "Can hormone therapy help with sexual dysfunction?",
+                a: "Sexual dysfunction can have multiple causes, but hormonal imbalance is one of the most common and treatable factors. Restoring testosterone and other key hormones to healthy levels often improves libido, erectile function, and sexual satisfaction.\n\nIf additional support is needed, there are other medical options that can be explored in consultation with your physician. Treatment is always individualized based on your health profile and needs.",
               },
               {
-                q: "What age range do you work with?",
-                a: "We work with adults of all ages who want to optimize their health—typically men and women between 30 and 70+ who are seeing changes in energy, performance, body composition, or hormonal symptoms.",
+                q: "Can I increase my testosterone naturally without hormone supplementation?",
+                a: "In very mild cases, lifestyle changes such as regular exercise, improved nutrition, and stress management may help support testosterone levels. However, when levels are clinically low, these measures alone are often insufficient. Proper testing is the only way to determine whether hormone supplementation is appropriate.",
+              },
+              {
+                q: "How is testosterone supplemented?",
+                a: "Testosterone can be administered through injections or transdermal topical creams or gels. The method and dosage are customized based on your lab results, medical history, and lifestyle to ensure safe and effective treatment.",
+              },
+              {
+                q: "What is Human Growth Hormone (HGH) therapy?",
+                a: "Human Growth Hormone plays a vital role in tissue repair, muscle development, bone strength, metabolism, cognitive function, and overall vitality. HGH levels naturally decline beginning in early adulthood, often decreasing significantly by midlife.\n\nWhen medically indicated, restoring HGH to healthy levels may help improve energy, body composition, cardiovascular health, skin quality, mental clarity, immune function, and recovery. Treatment is only considered after comprehensive testing confirms a deficiency.",
+              },
+              {
+                q: "Are there side effects to hormone therapy?",
+                a: "When properly prescribed and monitored, bioidentical hormone therapy has been shown to be both safe and effective. As with any medical treatment, potential side effects exist, which is why a comprehensive evaluation, including lab work and physical examination, is essential before starting therapy. At Nulife Institute we test 3-6X per year to closely monitor all patients.\n\nTreatment is only initiated when medically appropriate, and ongoing monitoring ensures hormone levels remain within safe, optimal ranges.",
+              },
+              {
+                q: "How can hormone optimization help women?",
+                a: "Hormonal imbalances affect millions of women and can occur during perimenopause, menopause, or earlier stages of life. Symptoms may include hot flashes, night sweats, weight gain, fatigue, mood changes, sleep disturbances, and reduced sexual interest.\n\nBioidentical hormone therapy, when appropriately prescribed, can help alleviate these symptoms and support energy levels, mental clarity, bone health, and overall quality of life.",
+              },
+              {
+                q: "Can you use lab work completed by my doctor?",
+                a: "In some cases, recent lab work may be accepted if it meets our clinical requirements. However, our physicians typically perform a comprehensive diagnostic panel to ensure accuracy and to fully assess your current hormone levels before developing a personalized treatment plan.",
+              },
+              {
+                q: "What are bioidentical hormones?",
+                a: "Bioidentical hormones are derived from natural sources and are structurally identical to the hormones your body produces naturally. Because of this, they are metabolized more efficiently and are generally better tolerated than synthetic hormones.\n\nEach treatment plan is custom-compounded based on your individual lab results, ensuring precision rather than a one-size-fits-all approach.",
+              },
+              {
+                q: "Can my regular doctor provide these treatments?",
+                a: "While many physicians are familiar with hormone replacement therapy, age management and bioidentical hormone optimization require specialized training. Our physicians are board-certified and trained specifically in age management medicine, with a focus on long-term health optimization rather than symptom suppression alone.",
+              },
+              {
+                q: "How do I know if I need hormone therapy?",
+                a: "The only reliable way to determine hormonal deficiencies or imbalances is through proper blood testing interpreted by an experienced specialist. From there, a personalized treatment plan can be developed based on your specific needs and goals.",
+              },
+              {
+                q: "How long will I need to stay on treatment?",
+                a: "Treatment duration varies from patient to patient. Hormone optimization is often a long-term commitment, as discontinuing therapy may allow hormone levels to return to pre-treatment levels. Your physician will review expectations and options with you in detail.",
+              },
+              {
+                q: "Can I apply for treatment online or over the phone?",
+                a: "For your safety and in accordance with medical regulations, all patients must be evaluated in person by a physician before beginning treatment.",
+              },
+              {
+                q: "Do you accept insurance?",
+                a: "To provide the highest level of personalized care without restrictions, treatments are not covered by insurance.",
+              },
+              {
+                q: "How much does treatment cost?",
+                a: "Costs vary based on your individual health profile, lab results, and treatment plan. Pricing is discussed transparently after your medical evaluation.",
+              },
+              {
+                q: "When will I start seeing results?",
+                a: "Many patients begin noticing improvements in energy, focus, mood, and overall well-being within four to six weeks, although timelines vary depending on individual response.",
               },
             ].map((item, i) => (
               <AccordionItem
@@ -728,7 +780,7 @@ export default function Home() {
                 <AccordionTrigger className="font-sans text-left text-[15px] font-semibold text-neutral-900 hover:no-underline py-5">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[14px] text-neutral-600 leading-relaxed pb-5">
+                <AccordionContent className="text-[14px] text-neutral-600 leading-relaxed pb-5 whitespace-pre-line">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
