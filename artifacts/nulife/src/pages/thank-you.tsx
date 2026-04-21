@@ -48,7 +48,7 @@ export default function ThankYou() {
               You're all set, your<br className="hidden md:block" />{" "}
               consultation is confirmed.
             </h1>
-            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-semibold text-white/95">
+            <p className="mt-6 text-base md:text-lg font-medium text-white/90">
               Check your email for confirmation details and a calendar invite.
             </p>
 
