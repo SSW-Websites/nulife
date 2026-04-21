@@ -25,17 +25,18 @@ function CircleNode({ children }: { children: React.ReactNode }) {
 function Arrow() {
   return (
     <svg
-      viewBox="0 0 60 16"
-      className="shrink-0 w-8 sm:w-10 md:w-14 h-4 text-neutral-500"
+      viewBox="0 0 80 20"
+      className="shrink-0 w-10 sm:w-14 md:w-20 h-5 text-neutral-400"
       fill="none"
       stroke="currentColor"
-      strokeWidth="0.6"
+      strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
     >
-      <line x1="0" y1="8" x2="58" y2="8" />
-      <path d="M52 4 L58 8 L52 12" />
+      <line x1="2" y1="10" x2="78" y2="10" />
+      <line x1="70" y1="3" x2="78" y2="10" />
+      <line x1="70" y1="17" x2="78" y2="10" />
     </svg>
   );
 }
