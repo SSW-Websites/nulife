@@ -72,10 +72,6 @@ const TEAM_MEMBERS = [
 ];
 
 export default function Home() {
-  const [reviewPage, setReviewPage] = useState(0);
-  const totalReviewPages = Math.ceil(PATIENT_REVIEWS.length / 3);
-  const visibleReviews = PATIENT_REVIEWS.slice(reviewPage * 3, reviewPage * 3 + 3);
-  const [teamPage, setTeamPage] = useState(0);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth < 768 : false,
   );
@@ -84,6 +80,15 @@ export default function Home() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+  const [reviewPage, setReviewPage] = useState(0);
+  const REVIEWS_PER_PAGE = isMobile ? 1 : 3;
+  const totalReviewPages = Math.ceil(PATIENT_REVIEWS.length / REVIEWS_PER_PAGE);
+  const safeReviewPage = Math.min(reviewPage, totalReviewPages - 1);
+  const visibleReviews = PATIENT_REVIEWS.slice(
+    safeReviewPage * REVIEWS_PER_PAGE,
+    safeReviewPage * REVIEWS_PER_PAGE + REVIEWS_PER_PAGE,
+  );
+  const [teamPage, setTeamPage] = useState(0);
   const TEAM_PER_PAGE = isMobile ? 1 : 4;
   const totalTeamPages = Math.ceil(TEAM_MEMBERS.length / TEAM_PER_PAGE);
   const safeTeamPage = Math.min(teamPage, totalTeamPages - 1);
@@ -566,7 +571,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-sm md:max-w-none mx-auto">
             {visibleReviews.map((r) => (
               <div key={r.name} className="bg-white text-neutral-800 rounded-2xl p-6 flex flex-col">
                 <p className="text-[14px] leading-relaxed text-neutral-700 flex-1">
