@@ -324,7 +324,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
+            <p className="text-[11px] tracking-[0.25em] text-neutral-900 uppercase font-extrabold">
               Our 4-Step Process
             </p>
             <h2
@@ -392,7 +392,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
+            <p className="text-[11px] tracking-[0.25em] text-neutral-900 uppercase font-extrabold">
               The Difference
             </p>
             <h2
