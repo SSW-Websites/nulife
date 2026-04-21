@@ -557,7 +557,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="flex flex-col justify-between min-h-full py-2">
+            <div className="flex flex-col justify-between min-h-full py-2 text-center lg:text-left">
               <h3
                 style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
                 className="uppercase text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-tight"
