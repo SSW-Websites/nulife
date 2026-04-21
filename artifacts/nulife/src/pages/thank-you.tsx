@@ -26,7 +26,7 @@ function Arrow() {
   return (
     <svg
       viewBox="0 0 80 20"
-      className="shrink-0 w-10 sm:w-14 md:w-20 h-5 text-neutral-400"
+      className="shrink-0 w-10 sm:w-14 md:w-20 h-5 text-black"
       fill="none"
       stroke="currentColor"
       strokeWidth="1"
