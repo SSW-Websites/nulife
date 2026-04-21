@@ -45,11 +45,11 @@ export default function ThankYou() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mt-16 md:mt-24 text-center max-w-4xl mx-auto"
+            className="mt-16 md:mt-24 text-center max-w-6xl mx-auto"
           >
             <h1
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-              className="font-sans uppercase text-4xl md:text-6xl lg:text-[72px] leading-[1.02] tracking-tight"
+              className="font-sans uppercase text-4xl md:text-5xl lg:text-[64px] leading-[1.05] tracking-tight"
             >
               We've got your application.<br className="hidden md:block" />{" "}
               Our team will call you shortly.
