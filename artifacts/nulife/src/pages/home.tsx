@@ -742,8 +742,22 @@ export default function Home() {
         <div className="max-w-[900px] mx-auto px-6 lg:px-10 text-center text-sm text-neutral-500">
           <p>© {new Date().getFullYear()} All rights reserved</p>
           <div className="mt-3 flex justify-center gap-8">
-            <a href="#" className="hover:text-neutral-900 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-neutral-900 transition-colors">Terms of Service</a>
+            <a
+              href="https://nulifeinstitute.com/privacy-notice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-900 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="https://nulifeinstitute.com/terms-and-conditions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-900 transition-colors"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </footer>
