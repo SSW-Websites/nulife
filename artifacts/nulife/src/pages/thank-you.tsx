@@ -14,8 +14,8 @@ const IMPACT_FONT =
 
 function CircleNode({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 aspect-square max-w-[200px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-3 sm:p-4 md:p-5">
-      <span className="text-center text-neutral-900 font-medium leading-snug text-[11px] sm:text-sm md:text-base lg:text-lg">
+    <div className="flex-1 aspect-square max-w-[240px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-2 sm:p-3 md:p-4">
+      <span className="text-center text-neutral-900 font-medium leading-tight text-[9px] sm:text-[11px] md:text-[13px] lg:text-sm">
         {children}
       </span>
     </div>
@@ -119,12 +119,12 @@ export default function ThankYou() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex justify-center lg:justify-end"
             >
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 w-full max-w-[760px]">
-                <CircleNode>Come prepared with</CircleNode>
+              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 w-full max-w-[820px]">
+                <CircleNode>Our team calls you to learn about your goals</CircleNode>
                 <Arrow />
-                <CircleNode>Your current symptoms &amp; concerns</CircleNode>
+                <CircleNode>Share your current symptoms and any recent lab work</CircleNode>
                 <Arrow />
-                <CircleNode>Any recent lab work</CircleNode>
+                <CircleNode>Meet with our medical experts to design your customized treatment plan</CircleNode>
               </div>
             </motion.div>
           </div>
