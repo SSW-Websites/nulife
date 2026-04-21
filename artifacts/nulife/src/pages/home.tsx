@@ -627,13 +627,13 @@ export default function Home() {
       {/* Direct Physician Access Section */}
       <section id="physicians" className="bg-[#EEF1F4] py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl"
+              className="max-w-3xl mx-auto lg:mx-0"
             >
               <p className="text-[11px] tracking-[0.25em] text-[#1F6BFF] uppercase font-medium">
                 Direct Physician Access
