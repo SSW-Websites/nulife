@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Leaf, Moon, Sun, Heart, Play, CheckCircle2, Quote, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,43 @@ import cardConcierge from "@assets/Group_1430105213_1776720189311.png";
 
 const IMPACT_FONT = 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif';
 
+const PATIENT_REVIEWS = [
+  {
+    quote: "I have been a client of Nulife's for several years. At 47 years old I feel and look as great as I did at 30! I have referred Nulife to many of my friends over the years and all of them are as happy as I am.",
+    name: "Lanelle Phillips",
+    time: "5 months ago",
+  },
+  {
+    quote: "As a 54 year old athlete that loves to train every day, I am very thankful to NuLife Institute for helping me enjoy what I love to do every day. Strongly recommended!",
+    name: "Ric Caselli",
+    time: "2 months ago",
+  },
+  {
+    quote: "The team at Nulife provides cutting edge health options that have improved my quality of life. Their friendly and professional staff offer a wide range of health and fitness programs which have made a huge difference.",
+    name: "Michael Hall",
+    time: "2 months ago",
+  },
+  {
+    quote: "Elizabeth and Janine are so very knowledgeable. NuLife Institute is continually guiding me, towards great health and vitality. They're the best in Miami.",
+    name: "Jay International",
+    time: "2 months ago",
+  },
+  {
+    quote: "My experience working with Jovana was excellent. She has great product knowledge and suggestions. And I felt very comfortable discussing my male health issues with her",
+    name: "Aaron Grover",
+    time: "2 months ago",
+  },
+  {
+    quote: "Jovana was very attentive and explained everything clearly. My husband and I are glad to start our journey at NuLife together.",
+    name: "Shirley Borloz",
+    time: "2 months ago",
+  },
+];
+
 export default function Home() {
+  const [reviewPage, setReviewPage] = useState(0);
+  const totalReviewPages = Math.ceil(PATIENT_REVIEWS.length / 3);
+  const visibleReviews = PATIENT_REVIEWS.slice(reviewPage * 3, reviewPage * 3 + 3);
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Navigation */}
@@ -475,27 +512,32 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid md:grid-cols-3 gap-5">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="bg-white text-neutral-800 rounded-2xl p-6">
-                <p className="text-[13px] leading-relaxed text-neutral-600">
-                  They did this, that and whatever else a testimonial gets included. May be good or no, but it's a testimonial, let's keep it short and sweet. They did this, that and whatever else a testimonial gets included. May be good or no, but it's a testimonial, let's keep it short and sweet.
+            {visibleReviews.map((r) => (
+              <div key={r.name} className="bg-white text-neutral-800 rounded-2xl p-6 flex flex-col">
+                <p className="text-[14px] leading-relaxed text-neutral-700 flex-1">
+                  &ldquo;{r.quote}&rdquo;
                 </p>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#0B1F3A]" />
-                  <div>
-                    <div className="text-sm font-semibold text-neutral-900">John Doe</div>
-                    <div className="text-[11px] text-neutral-500">Software AE at Slack</div>
-                  </div>
+                <div className="mt-6">
+                  <div className="text-sm font-semibold text-neutral-900">{r.name}</div>
+                  <div className="text-[11px] text-neutral-500 mt-0.5">{r.time}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-8 flex justify-center gap-4">
-            <button className="w-10 h-10 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-white transition flex items-center justify-center">
+            <button
+              onClick={() => setReviewPage((p) => (p - 1 + totalReviewPages) % totalReviewPages)}
+              className="w-10 h-10 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-white transition flex items-center justify-center"
+              aria-label="Previous reviews"
+            >
               <ArrowRight className="w-4 h-4 rotate-180" />
             </button>
-            <button className="w-10 h-10 rounded-full border border-neutral-700 text-white hover:border-white transition flex items-center justify-center">
+            <button
+              onClick={() => setReviewPage((p) => (p + 1) % totalReviewPages)}
+              className="w-10 h-10 rounded-full border border-neutral-700 text-white hover:border-white transition flex items-center justify-center"
+              aria-label="Next reviews"
+            >
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
