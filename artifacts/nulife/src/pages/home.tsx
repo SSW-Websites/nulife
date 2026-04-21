@@ -446,10 +446,9 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div className="relative rounded-2xl overflow-hidden bg-neutral-200 aspect-[4/3]">
-              <img src={heroMan} alt="Patient testimonial" className="w-full h-full object-cover" />
-              <div className="absolute left-6 bottom-6 text-white">
+          <div className="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+            <div className="relative rounded-2xl overflow-hidden bg-neutral-800 aspect-[4/3]">
+              <div className="absolute left-6 bottom-6 text-white z-10">
                 <div className="text-lg font-semibold">A. Lermsider</div>
                 <div className="h-[3px] w-24 bg-[#D14361] mt-1" />
                 <div className="text-xs mt-1 text-neutral-200">Miami, FL 48</div>
@@ -461,14 +460,14 @@ export default function Home() {
               </button>
             </div>
 
-            <div>
+            <div className="flex flex-col justify-between min-h-full py-2">
               <h3
                 style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-                className="font-sans uppercase text-3xl md:text-4xl lg:text-[44px] leading-[1.05] tracking-tight"
+                className="uppercase text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-tight"
               >
                 "My life completely changed thanks to this treatment."
               </h3>
-              <div className="mt-6 text-sm text-neutral-300 leading-relaxed">
+              <div className="mt-8 text-sm text-neutral-300 leading-relaxed">
                 <div>Hormone Therapy</div>
                 <div>Andrew L. | Age 48 | Miami, FL</div>
               </div>
