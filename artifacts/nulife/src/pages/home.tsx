@@ -151,67 +151,28 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
               className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
             >
-              <form
+              <div
                 id="qualify-form"
-                onSubmit={(e) => e.preventDefault()}
-                className="bg-white text-neutral-900 rounded-xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7 space-y-4 scroll-mt-24"
+                className="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 overflow-hidden scroll-mt-24"
               >
-                <div className="grid grid-cols-2 gap-4">
-                  <FieldText id="firstName" label="First Name" required />
-                  <FieldText id="lastName" label="Last Name" required />
-                </div>
-                <FieldText id="email" type="email" label="Email" required />
-                <FieldText id="phone" type="tel" label="Phone" required />
-                <FieldText id="city" label="City, State" required />
-
-                <FieldSelect
-                  id="goal"
-                  label="What's your #1 health goal right now?"
-                  required
-                  placeholder="Select your primary goal"
-                  options={[
-                    "Energy & Stamina",
-                    "Focus & Mental Clarity",
-                    "Strength & Performance",
-                    "Body Composition",
-                    "Libido & Sexual Health",
-                    "Longevity & Prevention",
-                  ]}
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/nLQRrO8Ueo7pBdjHxq2z"
+                  style={{ width: "100%", height: "979px", border: "none", borderRadius: "10px" }}
+                  id="inline-nLQRrO8Ueo7pBdjHxq2z"
+                  data-layout='{"id":"INLINE"}'
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="NuLife - New LP"
+                  data-height="979"
+                  data-layout-iframe-id="inline-nLQRrO8Ueo7pBdjHxq2z"
+                  data-form-id="nLQRrO8Ueo7pBdjHxq2z"
+                  title="NuLife - New LP"
                 />
-                <FieldSelect
-                  id="investment"
-                  label="How much are you willing to invest in your health over 6 months?"
-                  required
-                  placeholder="Select investment range"
-                  options={[
-                    "$2,500 – $5,000",
-                    "$5,000 – $10,000",
-                    "$10,000 – $20,000",
-                    "$20,000+",
-                  ]}
-                />
-                <FieldSelect
-                  id="visit"
-                  label="Can you visit our Miami or Boca Raton location for your initial evaluation?"
-                  required
-                  placeholder="Select location preference"
-                  options={["Yes — Miami", "Yes — Boca Raton", "Either location works", "Need to discuss"]}
-                />
-                <FieldSelect
-                  id="timeline"
-                  label="What type of treatment timeline are you looking for?"
-                  required
-                  placeholder="Select timeline"
-                  options={["Start within 2 weeks", "Start within 1 month", "Start within 3 months", "Just exploring"]}
-                />
-
-                <CTAButton type="submit" className="w-full" />
-
-
-                <p className="text-center text-xs text-neutral-500 pt-1">
-                  Confidential consultation · Built for long-term success
-                </p>
-              </form>
+              </div>
 
               {/* Trust line — under the form on all viewports */}
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/90 mt-6">
