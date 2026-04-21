@@ -233,9 +233,13 @@ export function TestimonialsSection() {
             >
               "My life completely changed thanks to this treatment."
             </h3>
-            <div className="mt-8 text-sm text-neutral-300 leading-relaxed">
-              <div>Hormone Therapy</div>
-              <div>Andrew L. | Age 48 | Miami, FL</div>
+            <div className="mt-8 leading-relaxed">
+              <div className="text-[11px] tracking-[0.25em] text-white uppercase font-extrabold">
+                Hormone Therapy
+              </div>
+              <div className="mt-2 text-sm text-neutral-300">
+                Andrew L. | Age 48 | Miami, FL
+              </div>
             </div>
           </div>
         </div>
