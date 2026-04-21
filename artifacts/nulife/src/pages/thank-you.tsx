@@ -14,7 +14,7 @@ const IMPACT_FONT =
 
 function CircleNode({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex-1 aspect-square max-w-[200px] rounded-full border border-neutral-400 bg-transparent flex items-center justify-center p-3 sm:p-4 md:p-5">
+    <div className="flex-1 aspect-square max-w-[200px] rounded-full border border-neutral-300/70 bg-transparent flex items-center justify-center p-3 sm:p-4 md:p-5">
       <span className="text-center text-neutral-900 font-medium leading-snug text-[11px] sm:text-sm md:text-base lg:text-lg">
         {children}
       </span>
@@ -25,17 +25,17 @@ function CircleNode({ children }: { children: React.ReactNode }) {
 function Arrow() {
   return (
     <svg
-      viewBox="0 0 40 12"
-      className="shrink-0 w-6 sm:w-8 md:w-10 h-3 text-neutral-700"
+      viewBox="0 0 60 16"
+      className="shrink-0 w-8 sm:w-10 md:w-14 h-4 text-neutral-500"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1"
+      strokeWidth="0.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
     >
-      <line x1="2" y1="6" x2="34" y2="6" />
-      <polyline points="28,2 38,6 28,10" />
+      <line x1="0" y1="8" x2="58" y2="8" />
+      <path d="M52 4 L58 8 L52 12" />
     </svg>
   );
 }
