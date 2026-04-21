@@ -5,7 +5,7 @@ import {
   SiteFooter,
 } from "@/components/site-sections";
 import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
-import heroMan from "@assets/8566065be8400f2dd715c1f798b2c97136b03dd2_1776719838989.png";
+import heroBg from "@assets/BG_IMG_1776795090542.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
 import circlesDiagram from "@assets/Group_350_1776790465717.png";
 
@@ -16,14 +16,14 @@ export default function ThankYou() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero — confirmation */}
-      <section className="relative bg-[#0B1F3A] text-white overflow-hidden">
-        {/* Background image of man */}
+      <section className="relative bg-black text-white overflow-hidden">
+        {/* Hero background image */}
         <div
-          className="absolute inset-y-0 right-0 w-2/3 lg:w-1/2 opacity-50 lg:opacity-70 bg-no-repeat bg-cover bg-right"
-          style={{ backgroundImage: `url(${heroMan})` }}
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/40" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10 pt-8 pb-20 md:pb-28">
           {/* Top centered logo */}
