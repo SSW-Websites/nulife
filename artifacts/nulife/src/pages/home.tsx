@@ -545,16 +545,14 @@ export default function Home() {
 
           <div className="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
             <div className="relative rounded-2xl overflow-hidden bg-neutral-800 aspect-[4/3]">
-              <div className="absolute left-6 bottom-6 text-white z-10">
-                <div className="text-lg font-semibold">A. Lermsider</div>
-                <div className="h-[3px] w-24 bg-[#D14361] mt-1" />
-                <div className="text-xs mt-1 text-neutral-200">Miami, FL 48</div>
-              </div>
-              <button className="absolute inset-0 flex items-center justify-center group">
-                <span className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center transition">
-                  <Play className="w-6 h-6 text-black ml-1" fill="currentColor" />
-                </span>
-              </button>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/SJ71RUZS_jE"
+                title="NuLife Institute patient testimonial"
+                frameBorder={0}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
 
             <div className="flex flex-col justify-between min-h-full py-2 text-center lg:text-left">
