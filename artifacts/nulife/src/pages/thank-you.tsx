@@ -51,8 +51,8 @@ export default function ThankYou() {
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
               className="font-sans uppercase text-4xl md:text-6xl lg:text-[72px] leading-[1.02] tracking-tight"
             >
-              You're all set, your<br className="hidden md:block" />{" "}
-              consultation is confirmed.
+              We've got your application.<br className="hidden md:block" />{" "}
+              Our team will call you shortly.
             </h1>
             <p className="mt-6 text-base md:text-lg font-medium text-white/90">
               Check your email for confirmation details and a calendar invite.
