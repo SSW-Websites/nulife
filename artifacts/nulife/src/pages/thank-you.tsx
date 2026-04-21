@@ -14,8 +14,8 @@ const IMPACT_FONT =
 
 function CircleNode({ children }: { children: React.ReactNode }) {
   return (
-    <div className="lg:flex-1 aspect-square w-[220px] lg:w-auto lg:max-w-[210px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-4">
-      <span className="text-center text-neutral-900 font-medium leading-tight text-sm lg:text-[13px]">
+    <div className="lg:flex-1 aspect-square w-[150px] lg:w-auto lg:max-w-[210px] rounded-full border-[1.81px] border-black bg-transparent flex items-center justify-center p-3 lg:p-4">
+      <span className="text-center text-neutral-900 font-medium leading-tight text-[11px] lg:text-[13px]">
         {children}
       </span>
     </div>
