@@ -81,7 +81,7 @@ export default function ThankYou() {
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
               className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center"
             >
-              How to make<br /> the most of your<br /> consultation
+              What<br /> happens<br /> next
             </motion.h2>
 
             <motion.div
