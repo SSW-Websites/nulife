@@ -635,7 +635,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto lg:mx-0"
             >
-              <p className="text-[11px] tracking-[0.25em] text-neutral-900 uppercase font-semibold">
+              <p className="text-[11px] tracking-[0.25em] text-neutral-900 uppercase font-extrabold">
                 Direct Physician Access
               </p>
               <h2
