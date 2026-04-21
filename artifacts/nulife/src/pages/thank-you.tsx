@@ -107,7 +107,7 @@ export default function ThankYou() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-              className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center lg:text-left"
+              className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center"
             >
               What happens<br className="hidden lg:block" /> next
             </motion.h2>
