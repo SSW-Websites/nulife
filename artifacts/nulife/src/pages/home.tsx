@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Leaf, Moon, Sun, Heart, Play, CheckCircle2, Quote, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -76,9 +76,21 @@ export default function Home() {
   const totalReviewPages = Math.ceil(PATIENT_REVIEWS.length / 3);
   const visibleReviews = PATIENT_REVIEWS.slice(reviewPage * 3, reviewPage * 3 + 3);
   const [teamPage, setTeamPage] = useState(0);
-  const TEAM_PER_PAGE = 4;
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false,
+  );
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  const TEAM_PER_PAGE = isMobile ? 1 : 4;
   const totalTeamPages = Math.ceil(TEAM_MEMBERS.length / TEAM_PER_PAGE);
-  const visibleTeam = TEAM_MEMBERS.slice(teamPage * TEAM_PER_PAGE, teamPage * TEAM_PER_PAGE + TEAM_PER_PAGE);
+  const safeTeamPage = Math.min(teamPage, totalTeamPages - 1);
+  const visibleTeam = TEAM_MEMBERS.slice(
+    safeTeamPage * TEAM_PER_PAGE,
+    safeTeamPage * TEAM_PER_PAGE + TEAM_PER_PAGE,
+  );
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Navigation */}
@@ -87,15 +99,24 @@ export default function Home() {
           <a href="#" className="flex items-center">
             <img src={nuLifeLogo} alt="NuLife Institute" className="h-9 w-auto" />
           </a>
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-white/90">
+          {/* Status pill — desktop / tablet only */}
+          <div className="hidden md:flex items-center gap-2 text-xs sm:text-sm font-medium text-white/90">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
             </span>
-            <span className="hidden sm:inline">Miami & Boca Raton</span>
-            <span className="hidden sm:inline text-white/40">|</span>
+            <span>Miami & Boca Raton</span>
+            <span className="text-white/40">|</span>
             <span>Physician-led concierge care</span>
           </div>
+          {/* CTA button — mobile only */}
+          <a
+            href="#qualify-form"
+            className="md:hidden inline-flex items-center gap-2 bg-[#1F6BFF] hover:bg-[#1857D6] text-white text-[11px] font-semibold tracking-[0.12em] px-4 py-2.5 rounded-full transition-colors"
+          >
+            SEE IF YOU QUALIFY
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
         </div>
       </nav>
 
@@ -121,8 +142,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-7 max-w-2xl"
+              className="lg:col-span-7 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
             >
+              {/* Status pill — mobile only (in nav on desktop) */}
+              <div className="md:hidden mb-5 flex items-center justify-center gap-2 text-xs font-medium text-white/85">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span>Miami & Boca Raton</span>
+                <span className="text-white/40">|</span>
+                <span>Physician-led concierge care</span>
+              </div>
               <h1
                 style={{ fontFamily: 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif', fontWeight: 400 }}
                 className="uppercase tracking-tight text-white leading-[0.95] text-[44px] sm:text-6xl lg:text-[80px] xl:text-[92px]"
@@ -133,12 +164,12 @@ export default function Home() {
                 focus and<br />
                 performance?
               </h1>
-              <p className="mt-8 text-lg md:text-xl text-white/85 max-w-xl leading-relaxed">
+              <p className="mt-8 text-lg md:text-xl text-white/85 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Get physician-led hormone optimization that actually monitors you.
               </p>
 
               {/* Reviews strip */}
-              <div className="mt-10 max-w-xl">
+              <div className="mt-10 max-w-xl mx-auto lg:mx-0">
                 <img
                   src={reviewsRow}
                   alt="Patient reviews — Jeff D., Tim C., Steve K., David M., Mike S., Chris T., Mark L."
@@ -147,12 +178,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Trust line under reviews (mobile). On desktop it appears under the form. */}
-              <div className="mt-8 lg:hidden flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
-                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Proactive Care Advisor</span>
-                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 3-6 Annual Labs</span>
-                <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> High Performance Community</span>
-              </div>
             </motion.div>
 
             {/* Qualification form */}
@@ -229,8 +254,8 @@ export default function Home() {
                 </p>
               </form>
 
-              {/* Trust line on desktop, under the form */}
-              <div className="hidden lg:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/90 mt-6">
+              {/* Trust line — under the form on all viewports */}
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/90 mt-6">
                 <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Proactive Care Advisor</span>
                 <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> 3-6 Annual Labs</span>
                 <span className="inline-flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> High Performance Community</span>
@@ -267,7 +292,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-3 divide-y divide-neutral-300"
+              className="hidden lg:block lg:col-span-3 divide-y divide-neutral-300"
             >
               {[
                 { value: "1000+", label: "Patients Optimized" },
@@ -311,16 +336,16 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ delay: i * 0.1, duration: 0.55 }}
-                  className="space-y-5"
+                  className="space-y-5 text-center sm:text-left"
                 >
-                  <img src={card.img} alt={card.title} className="w-36 h-36 object-contain" />
+                  <img src={card.img} alt={card.title} className="w-36 h-36 object-contain mx-auto sm:mx-0" />
                   <h3
                     style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
                     className="uppercase tracking-tight text-2xl leading-[1.05] text-neutral-900"
                   >
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-neutral-600 max-w-xs">
+                  <p className="text-sm leading-relaxed text-neutral-600 max-w-xs mx-auto sm:mx-0">
                     {card.desc}
                   </p>
                 </motion.div>
@@ -634,7 +659,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-sm md:max-w-none mx-auto">
             {visibleTeam.map((member, i) => (
               <motion.div
                 key={member.name}
