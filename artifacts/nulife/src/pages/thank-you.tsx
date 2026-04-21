@@ -48,7 +48,7 @@ export default function ThankYou() {
               You're all set, your<br className="hidden md:block" />{" "}
               consultation is confirmed.
             </h1>
-            <p className="mt-6 text-sm md:text-base text-white/80">
+            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-semibold text-white/95">
               Check your email for confirmation details and a calendar invite.
             </p>
 
@@ -56,7 +56,7 @@ export default function ThankYou() {
               <img
                 src={reviewsRow}
                 alt="Patient reviews"
-                className="h-12 md:h-14 w-auto"
+                className="h-24 md:h-32 lg:h-36 w-auto"
               />
             </div>
           </motion.div>
