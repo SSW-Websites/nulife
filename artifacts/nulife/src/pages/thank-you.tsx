@@ -73,7 +73,7 @@ export default function ThankYou() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-              className="uppercase text-3xl md:text-4xl lg:text-[44px] leading-[1.05] tracking-tight text-neutral-900 text-center lg:text-left"
+              className="uppercase text-4xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight text-neutral-900 text-center"
             >
               How to make<br /> the most of your<br /> consultation
             </motion.h2>
@@ -88,7 +88,7 @@ export default function ThankYou() {
               <img
                 src={circlesDiagram}
                 alt="Come prepared with your current symptoms & concerns and any recent lab work"
-                className="w-full max-w-[560px] h-auto"
+                className="w-full max-w-[720px] h-auto"
               />
             </motion.div>
           </div>
