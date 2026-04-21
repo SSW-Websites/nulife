@@ -11,6 +11,16 @@ import reviewsRow from "@assets/image_24_1776719838989.png";
 import cardMonitoring from "@assets/Group_1430105211_1776720189303.png";
 import cardEducation from "@assets/Group_1430105212_1776720189311.png";
 import cardConcierge from "@assets/Group_1430105213_1776720189311.png";
+import drFrank from "@assets/Dr-Frank-J-Welch_1776788182401.jpg";
+import drJanine from "@assets/Janine-Herrera-350x500px_1776788182402.jpg";
+import drJoshua from "@assets/Joshua-Wapner_1776788182402.jpg";
+import drKristine from "@assets/Kristine-Odio_(1)_1776788182402.jpg";
+import drBrittini from "@assets/Brittini-Hernandez-headshot-ai-500px.jpeg_1776788182400.jpg";
+import drJovana from "@assets/Jovana-Velez_1776788182402.jpg";
+import drRoger from "@assets/id_rodger_1776788182401.jpg";
+import drGuy from "@assets/Guy-Franks_1776788182401.jpg";
+import drElizabeth from "@assets/Elizabth-M-2_1776788182401.jpg";
+import drJuliana from "@assets/Juliana-Salunek-1_1776788182402.jpg";
 
 const IMPACT_FONT = 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif';
 
@@ -47,10 +57,27 @@ const PATIENT_REVIEWS = [
   },
 ];
 
+const TEAM_MEMBERS = [
+  { img: drFrank, name: "Dr. Frank J. Welch, M.D.", title: "Medical Director" },
+  { img: drJanine, name: "Janine L. Herrera, AGACNP-BC", title: "Board-Certified Nurse Practitioner" },
+  { img: drJoshua, name: "Joshua Wapner", title: "Chief Executive Officer" },
+  { img: drKristine, name: "Kristine Odio", title: "Practice Manager" },
+  { img: drBrittini, name: "Brittini Hernandez", title: "Administrative Coordinator" },
+  { img: drJovana, name: "Jovana Velez", title: "Patient Care Advisor" },
+  { img: drRoger, name: "Roger Medina", title: "Patient Care Advisor" },
+  { img: drGuy, name: "Guy Frank", title: "Patient Care Advisor" },
+  { img: drElizabeth, name: "Elizabeth Medina", title: "Patient Care Advisor" },
+  { img: drJuliana, name: "Juliana Salunek", title: "Patient Care Advisor" },
+];
+
 export default function Home() {
   const [reviewPage, setReviewPage] = useState(0);
   const totalReviewPages = Math.ceil(PATIENT_REVIEWS.length / 3);
   const visibleReviews = PATIENT_REVIEWS.slice(reviewPage * 3, reviewPage * 3 + 3);
+  const [teamPage, setTeamPage] = useState(0);
+  const TEAM_PER_PAGE = 4;
+  const totalTeamPages = Math.ceil(TEAM_MEMBERS.length / TEAM_PER_PAGE);
+  const visibleTeam = TEAM_MEMBERS.slice(teamPage * TEAM_PER_PAGE, teamPage * TEAM_PER_PAGE + TEAM_PER_PAGE);
   return (
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Navigation */}
@@ -584,30 +611,38 @@ export default function Home() {
             </motion.div>
 
             <div className="flex gap-3 shrink-0">
-              <button className="w-10 h-10 rounded-full border border-neutral-400 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 transition flex items-center justify-center">
+              <button
+                onClick={() => setTeamPage((p) => (p - 1 + totalTeamPages) % totalTeamPages)}
+                className="w-10 h-10 rounded-full border border-neutral-400 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 transition flex items-center justify-center"
+                aria-label="Previous team"
+              >
                 <ArrowRight className="w-4 h-4 rotate-180" />
               </button>
-              <button className="w-10 h-10 rounded-full border border-neutral-900 text-neutral-900 transition flex items-center justify-center">
+              <button
+                onClick={() => setTeamPage((p) => (p + 1) % totalTeamPages)}
+                className="w-10 h-10 rounded-full border border-neutral-900 text-neutral-900 transition flex items-center justify-center"
+                aria-label="Next team"
+              >
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[0, 1, 2, 3].map((i) => (
+            {visibleTeam.map((member, i) => (
               <motion.div
-                key={i}
+                key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-200 to-neutral-300 flex items-end justify-center">
-                  <div className="w-full h-full bg-neutral-300" />
+                <div className="aspect-square rounded-2xl overflow-hidden bg-neutral-200">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
                 </div>
-                <div className="mt-4 text-sm font-semibold text-neutral-900">Dr. Frank J. Welch, M.D.</div>
-                <div className="text-xs text-neutral-500 mt-0.5">Medical Director</div>
+                <div className="font-sans mt-4 text-sm font-semibold text-neutral-900">{member.name}</div>
+                <div className="text-xs text-neutral-500 mt-0.5">{member.title}</div>
               </motion.div>
             ))}
           </div>
