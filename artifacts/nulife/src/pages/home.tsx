@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import nuLifeLogo from "@assets/Layer_1_1776719838989.png";
 import heroMan from "@assets/8566065be8400f2dd715c1f798b2c97136b03dd2_1776719838989.png";
 import reviewsRow from "@assets/image_24_1776719838989.png";
@@ -672,275 +673,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Elements Grid */}
-      <section id="elements" className="py-24 md:py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-foreground">The Elements</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A holistic approach to daily optimization. Three pillars working in harmony to restore balance.
+      {/* FAQ Section */}
+      <section id="faq" className="bg-white py-20 md:py-28">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-10">
+          <div className="text-center">
+            <h2 className="font-sans text-3xl md:text-4xl font-semibold text-neutral-900">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-3 text-neutral-500 text-base">
+              Get answers to common questions about our personalized health optimization programs
             </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
+          </div>
+
+          <Accordion type="single" collapsible defaultValue="q-0" className="mt-12 space-y-4">
             {[
               {
-                icon: <Sun className="w-6 h-6" />,
-                title: "Morning Clarity",
-                desc: "Adaptogenic blends designed to banish brain fog and provide sustained, jitter-free focus.",
-                color: "bg-[#FDF4E9] text-[#C26B51]"
+                q: "How does the treatment program work?",
+                a: "Our comprehensive treatment program begins with an in-depth evaluation at our Miami or Boca Raton location. We analyze your biomarkers, health history, and goals to create a personalized plan that may include hormone optimization, nutritional guidance, and lifestyle interventions.",
               },
               {
-                icon: <Heart className="w-6 h-6" />,
-                title: "Daily Movement",
-                desc: "Guided micro-routines that mobilize joints and stimulate circulation without exhaustion.",
-                color: "bg-[#EEF2E6] text-[#6B705C]"
+                q: "What makes your approach different?",
+                a: "Most clinics check labs once a year. We monitor continuously, adjust dosing precisely, and your physician—not an assistant—walks you through every result in plain English. Our Patient Care Advisors anticipate your needs so your plan keeps moving without waiting weeks.",
               },
               {
-                icon: <Moon className="w-6 h-6" />,
-                title: "Deep Restoration",
-                desc: "Evening botanicals that naturally lower cortisol and prepare the body for reparative sleep.",
-                color: "bg-[#EAE8F0] text-[#4A4E69]"
-              }
-            ].map((element, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group p-8 rounded-3xl bg-card border border-border/50 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                q: "Do I need to visit in person?",
+                a: "Your initial evaluation happens at our Miami or Boca Raton location so we can perform a full diagnostic workup. After that, most follow-ups can be handled virtually with your physician and care advisor.",
+              },
+              {
+                q: "How long before I see results?",
+                a: "Most patients begin noticing improvements in energy, sleep, and focus within the first 3-6 weeks. Body composition and performance changes typically follow over the first 3-6 months as your protocol is dialed in.",
+              },
+              {
+                q: "Is this covered by insurance?",
+                a: "We are a concierge practice and operate outside of insurance to give you direct, unrushed physician access. We provide superbills you can submit to your insurance for potential reimbursement on covered services.",
+              },
+              {
+                q: "What age range do you work with?",
+                a: "We work with adults of all ages who want to optimize their health—typically men and women between 30 and 70+ who are seeing changes in energy, performance, body composition, or hormonal symptoms.",
+              },
+            ].map((item, i) => (
+              <AccordionItem
+                key={item.q}
+                value={`q-${i}`}
+                className="border border-neutral-200 rounded-xl px-6 bg-white"
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-300 ${element.color}`}>
-                  {element.icon}
-                </div>
-                <h3 className="text-2xl font-serif font-bold mb-3 text-foreground">{element.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {element.desc}
-                </p>
-              </motion.div>
+                <AccordionTrigger className="font-sans text-left text-[15px] font-semibold text-neutral-900 hover:no-underline py-5">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[14px] text-neutral-600 leading-relaxed pb-5">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Movement Spotlight Section */}
-      <section className="py-24 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex-1 relative"
-            >
-              <div className="aspect-square rounded-[3rem] overflow-hidden relative">
-                <img 
-                  src="/movement.png" 
-                  alt="Morning movement" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[3rem]"></div>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex-1 space-y-6"
-            >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">Move with intention.</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Fitness doesn't have to mean punishment. Our guided 10-minute morning flows are designed to gently wake up the nervous system, create mobility, and center your mind before the day demands your attention.
-              </p>
-              <ul className="space-y-4 pt-4">
-                {["10-minute morning routines", "No equipment required", "Focus on breath and mobility", "Designed by physical therapists"].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-secondary-foreground" />
-                    <span className="text-foreground font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-6">
-                <Button variant="outline" className="rounded-full h-12 px-6">Explore Routines</Button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Highlight */}
-      <section id="science" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src="/texture.png" alt="Texture" className="w-full h-full object-cover opacity-15 mix-blend-multiply" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-primary text-primary-foreground rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-2xl"
-          >
-            <div className="flex-1 space-y-6">
-              <h2 className="text-4xl md:text-6xl font-serif font-bold">The Foundation Kit</h2>
-              <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-xl">
-                Everything you need to start your journey. A 30-day supply of our core botanical formula, access to the movement library, and our guided intention journal.
-              </p>
-              <ul className="space-y-4 pt-4">
-                {[
-                  "Clinically dosed adaptogens (Ashwagandha, Rhodiola)",
-                  "No synthetic fillers, gums, or refined sugars",
-                  "Sustainably sourced, third-party tested ingredients"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary-foreground/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Leaf className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-8">
-                <Button size="lg" className="bg-background text-foreground hover:bg-background/90 rounded-full h-14 px-8 text-base shadow-xl">
-                  Get the Kit - $89
-                </Button>
-              </div>
-            </div>
-            <div className="flex-1 relative w-full max-w-md">
-              <motion.div 
-                whileHover={{ rotate: 0, scale: 1.05 }}
-                className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl rotate-3 transition-all duration-500 cursor-pointer"
-              >
-                <img src="/product.png" alt="Foundation Kit" className="w-full h-full object-cover" />
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section id="reviews" className="py-24 px-6 bg-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-foreground">Stories of Renewal</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                quote: "I've tried every supplement out there. NuLife is the first system that actually made me feel human again before 9 AM.",
-                author: "Sarah J.",
-                role: "Creative Director"
-              },
-              {
-                quote: "The combination of the morning ritual and the botanical blend completely shifted how I start my day. The brain fog is gone.",
-                author: "Michael T.",
-                role: "Software Engineer"
-              },
-              {
-                quote: "It feels less like taking vitamins and more like treating myself to a moment of peace. The branding matches the feeling.",
-                author: "Elena R.",
-                role: "Photographer"
-              }
-            ].map((review, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-card p-8 rounded-3xl border border-border/50 shadow-sm relative"
-              >
-                <Quote className="w-8 h-8 text-primary/20 absolute top-8 left-8" />
-                <div className="relative z-10 pt-8">
-                  <p className="text-foreground leading-relaxed italic mb-6">"{review.quote}"</p>
-                  <div>
-                    <div className="font-bold text-foreground">{review.author}</div>
-                    <div className="text-sm text-muted-foreground">{review.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA / Newsletter */}
-      <section className="py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-foreground">Begin your transformation.</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mt-6">
-              Join 50,000+ others who have redefined their daily routines. Subscribe to get our free 7-day morning reset guide.
-            </p>
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-3 pt-10">
-              <Input 
-                type="email" 
-                placeholder="Your email address" 
-                className="h-14 rounded-full px-6 text-base bg-muted border-transparent focus-visible:ring-primary shadow-inner"
-              />
-              <Button size="lg" className="h-14 rounded-full px-8 shrink-0 shadow-lg shadow-primary/20">
-                Subscribe
-              </Button>
-            </div>
-          </motion.div>
+          </Accordion>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1A1A1A] text-white py-20 px-6 rounded-t-[3rem] mt-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
-          <div className="col-span-1 md:col-span-2">
-            <div className="font-serif text-4xl font-bold mb-6 text-[#E8C2B3]">NuLife</div>
-            <p className="text-white/60 max-w-sm leading-relaxed">
-              Science-backed wellness for ambitious people who want to live with energy, clarity, and intention.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-bold mb-6 text-lg">Company</h4>
-            <ul className="space-y-4 text-white/60">
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Our Story</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">The Science</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Journal</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Careers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-6 text-lg">Shop</h4>
-            <ul className="space-y-4 text-white/60">
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Foundation Kit</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Refills</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Accessories</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Gift Cards</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-6 text-lg">Support</h4>
-            <ul className="space-y-4 text-white/60">
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Shipping & Returns</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-[#E8C2B3] transition-colors">Wholesale</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 text-white/40 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} NuLife Wellness Inc. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+      <footer className="bg-white border-t border-neutral-200 py-10">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-10 text-center text-sm text-neutral-500">
+          <p>© {new Date().getFullYear()} All rights reserved</p>
+          <div className="mt-3 flex justify-center gap-8">
+            <a href="#" className="hover:text-neutral-900 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-neutral-900 transition-colors">Terms of Service</a>
           </div>
         </div>
       </footer>
