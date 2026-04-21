@@ -654,9 +654,9 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-6 lg:px-10 text-center">
           <h2
             style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-            className="uppercase text-3xl md:text-5xl lg:text-[60px] leading-[1.02] tracking-tight"
+            className="uppercase text-4xl md:text-6xl lg:text-[76px] leading-[1.02] tracking-tight"
           >
-            Physician-led hormone optimization that actually monitors you.
+            Physician-led hormone<br className="hidden lg:block" /> optimization that actually<br className="hidden lg:block" /> monitors you.
           </h2>
           <div className="mt-7 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-sm text-white/90">
             {["Proactive Care Advisor", "3-6 Annual Labs", "High Performance Community"].map((f) => (
