@@ -163,8 +163,9 @@ export default function Home() {
               className="lg:col-span-5 lg:justify-self-end w-full max-w-md"
             >
               <form
+                id="qualify-form"
                 onSubmit={(e) => e.preventDefault()}
-                className="bg-white text-neutral-900 rounded-xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7 space-y-4"
+                className="bg-white text-neutral-900 rounded-xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7 space-y-4 scroll-mt-24"
               >
                 <div className="grid grid-cols-2 gap-4">
                   <FieldText id="firstName" label="First Name" required />
@@ -479,11 +480,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <button
-                  className={`mt-7 w-full ${card.btnBg} text-white font-semibold tracking-[0.12em] text-sm py-4 rounded-full transition-colors`}
+                <a
+                  href="#qualify-form"
+                  className={`mt-7 w-full ${card.btnBg} text-white font-semibold tracking-[0.12em] text-sm py-4 rounded-full transition-colors text-center block`}
                 >
                   SEE IF YOU QUALIFY
-                </button>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -582,9 +584,12 @@ export default function Home() {
             >
               Ready to feel like yourself again?
             </div>
-            <button className="bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-8 py-4 rounded-full hover:bg-neutral-100 transition whitespace-nowrap">
+            <a
+              href="#qualify-form"
+              className="bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-8 py-4 rounded-full hover:bg-neutral-100 transition whitespace-nowrap"
+            >
               SEE IF YOU QUALIFY
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -667,9 +672,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button className="mt-9 bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-10 py-4 rounded-full hover:bg-neutral-100 transition">
+          <a
+            href="#qualify-form"
+            className="mt-9 inline-block bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-10 py-4 rounded-full hover:bg-neutral-100 transition"
+          >
             SEE IF YOU QUALIFY
-          </button>
+          </a>
         </div>
       </section>
 
