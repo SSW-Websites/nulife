@@ -66,7 +66,7 @@ export default function ThankYou() {
       {/* How to make the most of your consultation */}
       <section className="bg-[#EEF1F4] py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function ThankYou() {
               <img
                 src={circlesDiagram}
                 alt="Come prepared with your current symptoms & concerns and any recent lab work"
-                className="w-full max-w-[720px] h-auto"
+                className="w-full max-w-[900px] h-auto"
               />
             </motion.div>
           </div>
