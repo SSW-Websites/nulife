@@ -646,7 +646,7 @@ export default function Home() {
               </h2>
             </motion.div>
 
-            <div className="flex gap-3 shrink-0">
+            <div className="hidden lg:flex gap-3 shrink-0">
               <button
                 onClick={() => setTeamPage((p) => (p - 1 + totalTeamPages) % totalTeamPages)}
                 className="w-10 h-10 rounded-full border border-neutral-400 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 transition flex items-center justify-center"
@@ -681,6 +681,24 @@ export default function Home() {
                 <div className="text-xs text-neutral-500 mt-0.5">{member.title}</div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Mobile arrows — below cards, centered */}
+          <div className="mt-8 flex lg:hidden justify-center gap-3">
+            <button
+              onClick={() => setTeamPage((p) => (p - 1 + totalTeamPages) % totalTeamPages)}
+              className="w-10 h-10 rounded-full border border-neutral-400 text-neutral-500 transition flex items-center justify-center"
+              aria-label="Previous team"
+            >
+              <ArrowRight className="w-4 h-4 rotate-180" />
+            </button>
+            <button
+              onClick={() => setTeamPage((p) => (p + 1) % totalTeamPages)}
+              className="w-10 h-10 rounded-full border border-neutral-900 text-neutral-900 transition flex items-center justify-center"
+              aria-label="Next team"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </section>
