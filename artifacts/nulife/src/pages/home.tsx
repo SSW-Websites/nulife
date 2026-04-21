@@ -83,7 +83,7 @@ export default function Home() {
     <div className="min-h-screen bg-background overflow-x-hidden selection:bg-primary/20 selection:text-primary">
       {/* Navigation */}
       <nav className="relative z-50 bg-[#0B1F3A] text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
           <a href="#" className="flex items-center">
             <img src={nuLifeLogo} alt="NuLife Institute" className="h-9 w-auto" />
           </a>
