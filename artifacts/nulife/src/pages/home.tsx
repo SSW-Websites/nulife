@@ -463,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials-real" className="bg-black text-white pt-20 md:pt-28 pb-12">
+      <section id="testimonials-real" className="bg-black text-white pt-20 md:pt-28 pb-20 md:pb-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -544,17 +544,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Bar (overlapping) */}
-      <div className="bg-black pb-16">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
-          <div className="bg-[#1F3BFF] rounded-2xl px-8 md:px-12 py-6 md:py-7 flex flex-col md:flex-row items-center justify-between gap-5">
+      {/* CTA Bar (overlapping between sections) */}
+      <div className="bg-gradient-to-b from-black from-50% to-[#EEF1F4] to-50%">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div className="bg-[#1F3BFF] rounded-2xl px-10 md:px-14 py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <div
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
-              className="uppercase text-white text-2xl md:text-[26px] tracking-tight text-center md:text-left"
+              className="uppercase text-white text-3xl md:text-[34px] lg:text-[38px] tracking-tight text-center md:text-left leading-[1.05]"
             >
               Ready to feel like yourself again?
             </div>
-            <button className="bg-white text-neutral-900 font-semibold tracking-[0.12em] text-sm px-7 py-3.5 rounded-full hover:bg-neutral-100 transition whitespace-nowrap">
+            <button className="bg-white text-neutral-900 font-semibold tracking-[0.14em] text-sm px-8 py-4 rounded-full hover:bg-neutral-100 transition whitespace-nowrap">
               SEE IF YOU QUALIFY
             </button>
           </div>
