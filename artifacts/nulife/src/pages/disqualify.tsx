@@ -50,7 +50,7 @@ export default function Disqualify() {
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
               className="font-sans uppercase text-3xl md:text-4xl lg:text-[56px] leading-[1.05] tracking-tight"
             >
-              We appreciate your interest in NuLife Institute.
+              We appreciate your interest<br className="hidden md:block" /> in NuLife Institute.
             </h1>
             <div className="mt-8 space-y-5 text-base md:text-lg font-medium text-white/90 max-w-3xl mx-auto">
               <p>
