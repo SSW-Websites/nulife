@@ -235,9 +235,7 @@ export function TestimonialsSection() {
             this treatment.”</h3>
             <div className="mt-8 leading-relaxed">
               <div className="text-[11px] tracking-[0.25em] text-white uppercase font-extrabold">Hormone</div>
-              <div className="mt-2 text-sm text-neutral-300">
-                Andrew L. | Age 48 | Miami, FL
-              </div>
+              <div className="mt-2 text-sm text-neutral-300">Kenneth | Age 45 | Aventura, FL</div>
             </div>
           </div>
         </div>
