@@ -230,9 +230,9 @@ export function TestimonialsSection() {
             <h3
               style={{ fontFamily: IMPACT_FONT, fontWeight: 400 }}
               className="uppercase text-4xl md:text-5xl lg:text-[64px] leading-[1.02] tracking-tight"
-            >
-              "My life completely changed thanks to this treatment."
-            </h3>
+            >“My life completely
+            changed thanks to
+            this treatment.”</h3>
             <div className="mt-8 leading-relaxed">
               <div className="text-[11px] tracking-[0.25em] text-white uppercase font-extrabold">Hormone</div>
               <div className="mt-2 text-sm text-neutral-300">
