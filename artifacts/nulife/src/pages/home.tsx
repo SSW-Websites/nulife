@@ -12,30 +12,22 @@ import reviewsRow from "@assets/image_24_1776719838989.png";
 import cardMonitoring from "@assets/Group_1430105211_1776720189303.png";
 import cardEducation from "@assets/Group_1430105212_1776720189311.png";
 import cardConcierge from "@assets/Group_1430105213_1776720189311.png";
-import drFrank from "@assets/Dr-Frank-J-Welch_1776788182401.jpg";
-import drJanine from "@assets/Janine-Herrera-350x500px_1776788182402.jpg";
-import drJoshua from "@assets/Joshua-Wapner_1776788182402.jpg";
-import drKristine from "@assets/Kristine-Odio_(1)_1776788182402.jpg";
-import drBrittini from "@assets/Brittini-Hernandez-headshot-ai-500px.jpeg_1776788182400.jpg";
-import drJovana from "@assets/Jovana-Velez_1776788182402.jpg";
-import drRoger from "@assets/id_rodger_1776788182401.jpg";
-import drGuy from "@assets/Guy-Franks_1776788182401.jpg";
-import drElizabeth from "@assets/Elizabth-M-2_1776788182401.jpg";
-import drJuliana from "@assets/Juliana-Salunek-1_1776788182402.jpg";
+import imgChristina from "@assets/Christina_Gray_1777912521002.webp";
+import imgMiranda from "@assets/Miranda_Altman_1777912521003.webp";
+import imgOlivia from "@assets/Olivia_Warren_1777912521003.webp";
+import imgOwen from "@assets/Owen_Stevens_1777912521003.webp";
+import imgPaul from "@assets/Paul_Pierce_1777912521004.webp";
+import imgWill from "@assets/Will_Sloane_1777912521004.webp";
 
 const IMPACT_FONT = 'Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif';
 
 const TEAM_MEMBERS = [
-  { img: drFrank, name: "Dr. Frank J. Welch, M.D.", title: "Medical Director" },
-  { img: drJanine, name: "Janine L. Herrera, AGACNP-BC", title: "Board-Certified Nurse Practitioner" },
-  { img: drJoshua, name: "Joshua Wapner", title: "Chief Executive Officer" },
-  { img: drKristine, name: "Kristine Odio", title: "Practice Manager" },
-  { img: drBrittini, name: "Brittini Hernandez", title: "Administrative Coordinator" },
-  { img: drJovana, name: "Jovana Velez", title: "Patient Care Advisor" },
-  { img: drRoger, name: "Roger Medina", title: "Patient Care Advisor" },
-  { img: drGuy, name: "Guy Frank", title: "Patient Care Advisor" },
-  { img: drElizabeth, name: "Elizabeth Medina", title: "Patient Care Advisor" },
-  { img: drJuliana, name: "Juliana Salunek", title: "Patient Care Advisor" },
+  { img: imgChristina, name: "Christina Gray", title: "Caretaker" },
+  { img: imgMiranda, name: "Miranda Altman", title: "Caretaker" },
+  { img: imgOlivia, name: "Olivia Warren", title: "Caretaker" },
+  { img: imgOwen, name: "Owen Stevens", title: "Caretaker" },
+  { img: imgPaul, name: "Paul Pierce", title: "Caretaker" },
+  { img: imgWill, name: "Will Sloane", title: "Caretaker" },
 ];
 
 export default function Home() {
